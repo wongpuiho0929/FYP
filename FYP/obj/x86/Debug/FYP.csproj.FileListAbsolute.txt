@@ -1,0 +1,49 @@
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\obj\x86\Debug\Login.Login.resources
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\obj\x86\Debug\Login.Properties.Resources.resources
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\bin\Debug\Login.exe
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\bin\Debug\Login.pdb
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\obj\x86\Debug\Login.exe
+C:\Users\puiho\AppData\Local\Temporary Projects\Login\obj\x86\Debug\Login.pdb
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\bin\Debug\FYP.exe
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\bin\Debug\FYP.pdb
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.Login.resources
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.Properties.Resources.resources
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\FYP.exe
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\FYP.pdb
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\FYP.csprojResolveAssemblyReference.cache
+C:\Users\puiho\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\FYP.exe
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\FYP.pdb
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\FYP.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\Login.Login.resources
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\Login.Properties.Resources.resources
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
+C:\Users\user\Desktop\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\FYP\FYP\bin\Debug\FYP.exe
+C:\Users\user\Desktop\FYP\FYP\bin\Debug\FYP.pdb
+C:\Users\user\Desktop\FYP\FYP\bin\Debug\MySql.Data.dll
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\FYP.exe
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\FYP.pdb
+C:\Users\a1\Desktop\FYP\FYP\bin\Debug\FYP.exe
+C:\Users\a1\Desktop\FYP\FYP\bin\Debug\FYP.pdb
+C:\Users\a1\Desktop\FYP\FYP\bin\Debug\MySql.Data.dll
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\FYP.csprojResolveAssemblyReference.cache
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\Login.Login.resources
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\Login.Properties.Resources.resources
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\a1\Desktop\FYP\FYP\obj\x86\Debug\Login.Menu.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.exe
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.pdb
+C:\Users\wongp\Desktop\FYP\FYP\bin\Debug\FYP.exe
+C:\Users\wongp\Desktop\FYP\FYP\bin\Debug\FYP.pdb
+C:\Users\wongp\Desktop\FYP\FYP\bin\Debug\MySql.Data.dll
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.csprojResolveAssemblyReference.cache
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Login.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Menu.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Properties.Resources.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.MaintainUser.resources
