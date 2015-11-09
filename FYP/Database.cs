@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Login
 {
@@ -33,6 +34,28 @@ namespace Login
                return db;
               
            }
+
+           public DataTable insertDb(String sql)
+           {
+
+               MySqlCommand command = cnn.CreateCommand();
+               cnn.Open();
+               String cmdText = sql;
+               MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
+               MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
+               cnn.Close();
+               DataTable db = new DataTable();
+               try
+               {
+                   da.Fill(db);
+               }
+               catch (Exception ex) {
+                   MessageBox.Show("You are already INSERT this record!");
+               }
+               cnn.Close();
+               return db;
+           }
+
 
 
     }
