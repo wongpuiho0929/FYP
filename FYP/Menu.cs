@@ -13,8 +13,6 @@ namespace Login
     {
         private Form login,maintainUser;
         public Database database;
-        public DataTable dt_account;
-
 
         public Menu(Form login)
         {

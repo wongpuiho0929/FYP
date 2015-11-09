@@ -44,7 +44,6 @@ namespace Login
             }
             if (chk[0]) {
                 showData.DataSource = db;
-                menu.dt_account = database.insertDb("INSERT INTO account VALUES ('tommy','tommy','staff'); ");
             }
 
         }
