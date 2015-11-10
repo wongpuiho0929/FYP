@@ -35,7 +35,7 @@ namespace Login
               
            }
 
-           public DataTable insertDb(String sql)
+           public void queny(String sql)
            {
 
                MySqlCommand command = cnn.CreateCommand();
@@ -53,10 +53,7 @@ namespace Login
                    MessageBox.Show("You are already INSERT this record!");
                }
                cnn.Close();
-               return db;
+            
            }
-
-
-
     }
 }

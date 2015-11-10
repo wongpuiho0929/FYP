@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `name` varchar(30) NOT NULL,
   `price` double NOT NULL,
   `qty` int(30) NOT NULL,
-  `isShow` tinyint(1) NOT NULL,
+  `isShow` boolean NOT NULL,
   `type` varchar(30) NOT NULL,
   `ingredientValue` double NOT NULL,
   `specialPrice` double NOT NULL
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `sId` varchar(30) NOT NULL,
   `orderDate` date NOT NULL,
   `expectedTime` date NOT NULL,
-  `status` double NOT NULL
+  `status` boolean NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `studnet` (
   `password` varchar(30) NOT NULL,
   `balance` double NOT NULL,
   `email` varchar(30) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` boolean NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 

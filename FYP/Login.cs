@@ -14,7 +14,7 @@ namespace Login
     public partial class Login : Form
     {
         public String userName;
-        private Form menu;
+        private Main main;
         public Database database;
 
         public Login()
@@ -29,7 +29,7 @@ namespace Login
             
         }
         public void SplashScreen() {
-            Application.Run(new SplashScreen());
+            //Application.Run(new SplashScreen());
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -39,9 +39,9 @@ namespace Login
                 if (txt_userName.Text.Equals(db_account.Rows[i]["userName"].ToString()) && txt_password.Text.Equals(db_account.Rows[i]["password"].ToString()))
                 {
                     userName = db_account.Rows[i]["userName"].ToString();
-                    menu = new Menu(this);
+                    main = new Main(this);
                     this.Hide();
-                    menu.Show();
+                    main.Show();
                 }
             } 
           

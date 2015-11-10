@@ -13,21 +13,21 @@ namespace Login
     {
         private Form login,maintainUser;
         public Database database;
-        public DataTable dt_account;
+
 
 
         public Menu(Form login)
         {
             InitializeComponent();
             this.login = login;
-            lab_welcome.Text += ((Login)login).userName;
-            this.database =((Login)login).database;
+            //lab_welcome.Text += ((Login)login).userName;
+           
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
            
-            maintainUser = new MaintainUser(this);
+           
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -41,5 +41,13 @@ namespace Login
             maintainUser.Show();
             this.Hide();
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            maintainUser.Show();
+
+        }
+
+      
     }
 }

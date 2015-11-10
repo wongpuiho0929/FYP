@@ -47,3 +47,8 @@ C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Properties.Resources.resource
 C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
 C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
 C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.MaintainUser.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Main.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.AddValue.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.MaintainMenu.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.Report.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.ViewOrder.resources

@@ -9,26 +9,19 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    public partial class MaintainUser : Form
+    public partial class AddValue : Form
     {
         private Main main;
 
-        public MaintainUser(Main main)
+        public AddValue( Main main)
         {
             InitializeComponent();
             this.main = main;
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void MaintainUser_Load(object sender, EventArgs e)
+        private void AddValue_Load(object sender, EventArgs e)
         {
 
         }
-
-
     }
 }
