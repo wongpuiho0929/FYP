@@ -30,6 +30,9 @@
         {
             this.btn_back = new System.Windows.Forms.Button();
             this.panel_chickType = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lab_searchId = new System.Windows.Forms.Label();
+            this.btn_search = new System.Windows.Forms.Button();
             this.chk_type = new System.Windows.Forms.CheckedListBox();
             this.lab_type = new System.Windows.Forms.Label();
             this.lab_staff = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@
             this.showdata_staff = new System.Windows.Forms.DataGridView();
             this.panel_student = new System.Windows.Forms.Panel();
             this.showdata_student = new System.Windows.Forms.DataGridView();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.lab_searchId = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel_chickType.SuspendLayout();
             this.panel_staff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showdata_staff)).BeginInit();
@@ -51,11 +51,12 @@
             // btn_back
             // 
             this.btn_back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_back.Font = new System.Drawing.Font("Comic Sans MS", 20F);
-            this.btn_back.Location = new System.Drawing.Point(760, 12);
+            this.btn_back.AutoSize = true;
+            this.btn_back.Font = new System.Drawing.Font("Comic Sans MS", 18F);
+            this.btn_back.Location = new System.Drawing.Point(761, 12);
             this.btn_back.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(173, 60);
+            this.btn_back.Size = new System.Drawing.Size(173, 52);
             this.btn_back.TabIndex = 1;
             this.btn_back.Text = "BACK";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -72,6 +73,36 @@
             this.panel_chickType.Name = "panel_chickType";
             this.panel_chickType.Size = new System.Drawing.Size(241, 662);
             this.panel_chickType.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 15F);
+            this.textBox1.Location = new System.Drawing.Point(8, 401);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(202, 42);
+            this.textBox1.TabIndex = 4;
+            // 
+            // lab_searchId
+            // 
+            this.lab_searchId.AutoSize = true;
+            this.lab_searchId.Font = new System.Drawing.Font("Comic Sans MS", 18F);
+            this.lab_searchId.Location = new System.Drawing.Point(5, 356);
+            this.lab_searchId.Name = "lab_searchId";
+            this.lab_searchId.Size = new System.Drawing.Size(158, 42);
+            this.lab_searchId.TabIndex = 3;
+            this.lab_searchId.Text = "Search id:";
+            // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.Font = new System.Drawing.Font("Comic Sans MS", 20F);
+            this.btn_search.Location = new System.Drawing.Point(8, 467);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(173, 60);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
             // 
             // chk_type
             // 
@@ -131,6 +162,7 @@
             this.panel_staff.Name = "panel_staff";
             this.panel_staff.Size = new System.Drawing.Size(671, 306);
             this.panel_staff.TabIndex = 5;
+            this.panel_staff.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_staff_Paint);
             // 
             // showdata_staff
             // 
@@ -163,36 +195,6 @@
             this.showdata_student.Size = new System.Drawing.Size(671, 264);
             this.showdata_student.TabIndex = 5;
             // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.Font = new System.Drawing.Font("Comic Sans MS", 20F);
-            this.btn_search.Location = new System.Drawing.Point(8, 467);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(173, 60);
-            this.btn_search.TabIndex = 2;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
-            // 
-            // lab_searchId
-            // 
-            this.lab_searchId.AutoSize = true;
-            this.lab_searchId.Font = new System.Drawing.Font("Comic Sans MS", 18F);
-            this.lab_searchId.Location = new System.Drawing.Point(5, 356);
-            this.lab_searchId.Name = "lab_searchId";
-            this.lab_searchId.Size = new System.Drawing.Size(158, 42);
-            this.lab_searchId.TabIndex = 3;
-            this.lab_searchId.Text = "Search id:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 15F);
-            this.textBox1.Location = new System.Drawing.Point(8, 401);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 42);
-            this.textBox1.TabIndex = 4;
-            // 
             // MaintainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -218,6 +220,7 @@
             this.panel_student.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showdata_student)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

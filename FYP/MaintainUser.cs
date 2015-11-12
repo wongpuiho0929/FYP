@@ -29,6 +29,11 @@ namespace Login
 
         }
 
+        private void panel_staff_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
     }
 }

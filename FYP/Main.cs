@@ -60,7 +60,7 @@ namespace Login
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            menu.Show();
+            maintainMenu.Show();
         }
 
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
