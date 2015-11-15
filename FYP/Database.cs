@@ -18,8 +18,9 @@ namespace Login
         //connetionString = "Server=" + server + ";Database=" + database + ";";
            public void Connection()
             {
-                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + ";";
+                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + "; Charset=big5";
                 cnn = new MySqlConnection(connetionString);
+                
             }
            public DataTable getDb(String dbName)
            {
@@ -40,6 +41,9 @@ namespace Login
 
                MySqlCommand command = cnn.CreateCommand();
                cnn.Open();
+               MySqlCommand s = new MySqlCommand("set names big5", cnn);
+               s.ExecuteNonQuery();
+               s.Dispose();
                String cmdText = sql;
                MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
                MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);

@@ -17,6 +17,8 @@ namespace Login
         {
             InitializeComponent();
             this.main = main;
+            lab_showFoodName.Text = "";
+            lab_showDrinkName.Text= "";
             
 
             
@@ -36,6 +38,32 @@ namespace Login
                 drinkName.Items.Add(dt_drink.Rows[i]["name"]);
             }
         }
+
+        private void drinkName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            lab_showDrinkName.Text = "";
+            for (int i = 0; i < drinkName.CheckedItems.Count; i++)
+            {
+                lab_showDrinkName.Text += drinkName.CheckedItems[i].ToString();
+            }
+        }
+
+        private void foodName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lab_showFoodName.Text = foodName.SelectedItem.ToString();
+    
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            main.database.queny("update food set addDrink='"+lab_showDrinkName.Text+"',addValue="+Convert.ToInt32(txt_sPrice.Text)+" where name='"+lab_showFoodName.Text+"'");
+        }
+
+       
+
+
+     
 
 
     }
