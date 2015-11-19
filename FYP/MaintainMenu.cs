@@ -27,8 +27,8 @@ namespace Login
 
         private void MaintainMenu_Load(object sender, EventArgs e)
         {   
-            DataTable dt_food = main.database.getDb("food where type = 'R'");
-            DataTable dt_drink = main.database.getDb("food where type = 'D'");
+            DataTable dt_food = main.database.getDb("food where type = 'rice' or type='mix'");
+            DataTable dt_drink = main.database.getDb("food where type = 'drink'");
             for (int i = 0; i < dt_food.Rows.Count; i++)
             {
                 foodName.Items.Add(dt_food.Rows[i]["name"]);

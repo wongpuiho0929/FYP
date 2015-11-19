@@ -1,5 +1,30 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.7.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 18, 2015 at 08:06 AM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
--- 資料表結構 `account`
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `fyp_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
 
 CREATE TABLE IF NOT EXISTS `account` (
   `userName` varchar(30) NOT NULL,
@@ -7,27 +32,50 @@ CREATE TABLE IF NOT EXISTS `account` (
   `position` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-
 --
--- 資料表結構 `menu`
+-- Dumping data for table `account`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
-  `menuID` varchar(30) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `price` double NOT NULL,
-  `qty` int(30) NOT NULL,
-  `isShow` boolean NOT NULL,
-  `type` varchar(30) NOT NULL,
-  `ingredientValue` double NOT NULL,
-  `specialPrice` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `account` (`userName`, `password`, `position`) VALUES
+('admin', 'admin', 'manager'),
+('S0001', 'admin', 'staff'),
+('tommy', 'tommy', 'staff'),
+('tommy1', 'tommy', 'staff'),
+('tommy2', 'tommy', 'staff'),
+('tommy3', 'tommy', 'staff');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `order`
+-- Table structure for table `food`
+--
+
+CREATE TABLE IF NOT EXISTS `food` (
+  `FID` varchar(30) NOT NULL,
+  `name` varchar(30) CHARACTER SET big5 NOT NULL,
+  `price` double NOT NULL,
+  `isshow` varchar(1) NOT NULL DEFAULT 'Y',
+  `type` varchar(30) NOT NULL,
+  `isFreeDrink` varchar(1) NOT NULL DEFAULT 'N',
+  `addValue` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`FID`, `name`, `price`, `isshow`, `type`, `isFreeDrink`, `addValue`) VALUES
+('F0001', '香濃咖喱牛腩飯', 30, 'Y', 'rice', 'N', 0),
+('F0002', '香濃咖喱雞飯', 30, 'Y', 'rice', 'N', 0),
+('F0003', '即磨咖啡', 10, 'Y', 'drink', 'N', 0),
+('F0004', '茶', 10, 'Y', 'drink', 'N', 0),
+('F0005', '蛋包飯', 30, 'N', 'rice', 'N', 0),
+('F0006', '南瓜杯子小蛋糕', 0, 'Y', 'mix', 'N', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
 --
 
 CREATE TABLE IF NOT EXISTS `order` (
@@ -35,13 +83,13 @@ CREATE TABLE IF NOT EXISTS `order` (
   `sId` varchar(30) NOT NULL,
   `orderDate` date NOT NULL,
   `expectedTime` date NOT NULL,
-  `status` boolean NOT NULL
+  `status` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `ordermenu`
+-- Table structure for table `ordermenu`
 --
 
 CREATE TABLE IF NOT EXISTS `ordermenu` (
@@ -55,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `ordermenu` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `studnet`
+-- Table structure for table `studnet`
 --
 
 CREATE TABLE IF NOT EXISTS `studnet` (
@@ -63,29 +111,37 @@ CREATE TABLE IF NOT EXISTS `studnet` (
   `password` varchar(30) NOT NULL,
   `balance` double NOT NULL,
   `email` varchar(30) NOT NULL,
-  `status` boolean NOT NULL
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Indexes for dumped tables
+--
 
 --
--- 資料表索引 `account`
+-- Indexes for table `account`
 --
 ALTER TABLE `account`
  ADD PRIMARY KEY (`userName`);
 
 --
--- 資料表索引 `order`
+-- Indexes for table `food`
+--
+ALTER TABLE `food`
+ ADD PRIMARY KEY (`FID`), ADD UNIQUE KEY `FID` (`FID`), ADD KEY `FID_3` (`FID`), ADD FULLTEXT KEY `FID_2` (`FID`);
+
+--
+-- Indexes for table `order`
 --
 ALTER TABLE `order`
  ADD PRIMARY KEY (`orderId`);
 
 --
--- 資料表索引 `studnet`
+-- Indexes for table `studnet`
 --
 ALTER TABLE `studnet`
  ADD PRIMARY KEY (`Sid`);
- 
- 
- ALTER TABLE `menu`
- ADD PRIMARY KEY (`menuID`);
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

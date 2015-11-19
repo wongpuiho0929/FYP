@@ -14,11 +14,11 @@ namespace Login
         private String server = "127.0.0.1";
         private String database = "fyp_db";
         private String uid="root";
-        private String password;
+        private String password="tommy985";
         //connetionString = "Server=" + server + ";Database=" + database + ";";
            public void Connection()
             {
-                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + "; Charset=big5";
+                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + ";Pwd="+password+"; Charset=utf8";
                 cnn = new MySqlConnection(connetionString);
                 
             }
