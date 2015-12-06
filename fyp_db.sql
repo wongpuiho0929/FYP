@@ -1,7 +1,7 @@
 -- db name :fyp_db --
 DROP TABLE IF EXISTS `menuFood`;
-DROP TABLE IF EXISTS `food`;
 DROP TABLE IF EXISTS `orderFood`;
+DROP TABLE IF EXISTS `food`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `menu`;
 DROP TABLE IF EXISTS `stuHistory`;
@@ -19,6 +19,7 @@ CREATE TABLE `staff`(
 CREATE TABLE `student`(
 	`stuId` varchar(10) NOT NULL,
 	`password` varchar(30) NOT NULL,
+	`name` varchar(30) NOT NULL,
 	`balance` numeric(5,2) NOT NULL DEFAULT 0,
 	`email` varchar(30) NOT NULL,
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
@@ -40,22 +41,23 @@ CREATE TABLE `orders`(
 	`menuId` varchar(10) NOT NULL,
 	PRIMARY KEY (`orderDate`,`orderId`)
 );
-CREATE TABLE `orderFood`(
-	`orderDate` date NOT NULL,
-	`orderId` varchar(10) NOT NULL,
-	`foodId` varchar(10) NOT NULL,
-	`price` numeric(5,2)
-);
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
 	`name` varchar(30) NOT NULL,
 	`price` numeric(5,2) NOT NULL,
 	`sPrice` numeric(5,2) NOT NULL,
+	`img` varchar(50) NULL,
 	`qty` integer NOT NULL,
 	`dQty` integer NOT NULL,
 	`type`  varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`foodId`)
+);
+CREATE TABLE `orderFood`(
+	`orderDate` date NOT NULL,
+	`orderId` varchar(10) NOT NULL,
+	`foodId` varchar(10) NOT NULL,
+	`price` numeric(5,2)
 );
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
@@ -86,9 +88,9 @@ ADD CONSTRAINT `foodId_fk1` FOREIGN KEY(`foodId`) REFERENCES `food`(`foodId`)
 -- end create table --
 
 -- add data --
-INSERT INTO `student` (`stuId`, `password`, `balance`, `email`, `status`) VALUES
-('140476338', '140476338', '99999', 'a@a.com', 'approve'),
-('092141446', '092141446', '99999', 'a@a.com', 'processing')
+INSERT INTO `student` (`stuId`, `password`, `name`, `balance`, `email`, `status`) VALUES
+('140476338', '140476338', 'fung', '99999', 'a@a.com', 'approve'),
+('092141446', '092141446', 'tom', '99999', 'a@a.com', 'processing')
 ;
 INSERT INTO `staff` (`username`, `password`, `position`, `name`) VALUES
 ('admin', 'admin', 'manager', 'admin'),
