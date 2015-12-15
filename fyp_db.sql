@@ -15,7 +15,7 @@ CREATE TABLE `staff`(
 	`position` varchar(10) NOT NULL,
 	`name` varchar(30) NOT NULL,
 	PRIMARY KEY (`username`)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `student`(
 	`stuId` varchar(10) NOT NULL,
 	`password` varchar(30) NOT NULL,
@@ -24,12 +24,12 @@ CREATE TABLE `student`(
 	`email` varchar(30) NOT NULL,
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
 	PRIMARY KEY (`stuId`)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `stuHistory`(
 	`stuId` varchar(10) NOT NULL,
 	`action` varchar(10) NOT NULL,
 	`balance` integer NOT NULL
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `orders`(
 	`orderDate` date NOT NULL,
 	`orderId` varchar(10) NOT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE `orders`(
 	`totalPrice` numeric(5,2) NOT NULL,
 	`menuId` varchar(10) NOT NULL,
 	PRIMARY KEY (`orderDate`,`orderId`)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
-	`name` varchar(30) NOT NULL,
+	`name` varchar(50) NOT NULL,
 	`price` numeric(5,2) NOT NULL,
 	`sPrice` numeric(5,2) NOT NULL,
 	`img` varchar(50) NULL,
@@ -52,26 +52,26 @@ CREATE TABLE `food`(
 	`type`  varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`foodId`)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `orderFood`(
 	`orderDate` date NOT NULL,
 	`orderId` varchar(10) NOT NULL,
 	`foodId` varchar(10) NOT NULL,
 	`price` numeric(5,2)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
-	`name` varchar(30) NOT NULL,
+	`name` varchar(50) NOT NULL,
 	`price` numeric(5,2) NULL,
 	`img` varchar(50) NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`menuId`)
-);
+) CHARACTER SET = utf8;
 CREATE TABLE `menuFood`(
 	`menuId` varchar(10) NOT NULL,
 	`type` varchar(10) NOT NULL,
 	`many` integer NOT NULL DEFAULT 1
-);
+) CHARACTER SET = utf8;
 ALTER TABLE `stuHistory`
 ADD CONSTRAINT `stuIdH_fk1` FOREIGN KEY(`stuId`) REFERENCES `student`(`stuId`)
 ;
@@ -98,22 +98,22 @@ INSERT INTO `staff` (`username`, `password`, `position`, `name`) VALUES
 ('tommy', 'tommy', 'staff', 'tommy')
 ;
 INSERT INTO `food` (`foodId`, `name`, `price`, `sPrice`, `qty`, `dQty`, `type`, `isShow`) VALUES
-('F00000001', '香濃咖喱牛腩飯', 30, 0, 100, 100, 'Rice', 'Y'),
-('F00000002', '香濃咖喱雞飯', 30, 0, 100, 100, 'Rice', 'Y'),
-('F00000003', '即磨咖啡', 12, 0, 100, 100, 'Drink', 'Y'),
-('F00000004', '凍檸茶', 15, 3, 100, 100, 'Drink', 'Y'),
-('F00000005', '紅豆冰', 18, 8, 100, 100, 'Drink', 'Y'),
-('F00000006', '叉燒', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000007', '燒鴨', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000008', '燒肉', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000009', '雞', 30, 0, 100, 100, 'Batching', 'Y')
+('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', 30, 0, 100, 100, 'Rice', 'Y'),
+('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', 30, 0, 100, 100, 'Rice', 'Y'),
+('F00000003', '即磨咖啡(ground coffee)', 12, 0, 100, 100, 'Drink', 'Y'),
+('F00000004', '凍檸茶(Ice lemon tea)', 15, 3, 100, 100, 'Drink', 'Y'),
+('F00000005', '紅豆冰(Red bean ice)', 18, 8, 100, 100, 'Drink', 'Y'),
+('F00000006', '叉燒(Barbecue pork)', 30, 0, 100, 100, 'Batching', 'Y'),
+('F00000007', '燒鴨(Roast duck)', 30, 0, 100, 100, 'Batching', 'Y'),
+('F00000008', '燒肉(Roasted pork)', 30, 0, 100, 100, 'Batching', 'Y'),
+('F00000009', '切雞(Cut chicken)', 30, 0, 100, 100, 'Batching', 'Y')
 ;
 INSERT INTO `Menu` (`menuId`, `name`, `price`, `isShow`) VALUES
-('M00000001', '飯類', null, 'Y'),
-('M00000002', '飲品', null, 'Y'),
-('M00000003', '套餐', null, 'Y'),
-('M00000004', '雙餸飯', null, 'Y'),
-('M00000005', '雙餸飯套餐', null, 'Y')
+('M00000001', '飯類(Rice)', null, 'Y'),
+('M00000002', '飲品(Drink)', null, 'Y'),
+('M00000003', '套餐(Set food)', null, 'Y'),
+('M00000004', '雙餸飯(Rice with two choices of sides)', null, 'Y'),
+('M00000005', '雙餸飯套餐(Set food of Rice with two choices of sides)', null, 'Y')
 ;
 INSERT INTO `menuFood` (`menuId`, `type`, `many`) VALUES
 ('M00000001', 'Rice', 1),
