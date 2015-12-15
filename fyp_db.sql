@@ -63,6 +63,7 @@ CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
 	`name` varchar(30) NOT NULL,
 	`price` numeric(5,2) NULL,
+	`img` varchar(50) NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`menuId`)
 );
@@ -108,19 +109,19 @@ INSERT INTO `food` (`foodId`, `name`, `price`, `sPrice`, `qty`, `dQty`, `type`, 
 ('F00000009', '雞', 30, 0, 100, 100, 'Batching', 'Y')
 ;
 INSERT INTO `Menu` (`menuId`, `name`, `price`, `isShow`) VALUES
-('M000000001', '飯類', null, 'Y'),
-('M000000002', '飲品', null, 'Y'),
-('M000000003', '套餐', null, 'Y'),
-('M000000004', '雙餸飯', null, 'Y'),
-('M000000005', '雙餸飯套餐', null, 'Y')
+('M00000001', '飯類', null, 'Y'),
+('M00000002', '飲品', null, 'Y'),
+('M00000003', '套餐', null, 'Y'),
+('M00000004', '雙餸飯', null, 'Y'),
+('M00000005', '雙餸飯套餐', null, 'Y')
 ;
 INSERT INTO `menuFood` (`menuId`, `type`, `many`) VALUES
-('M000000001', 'Rice', 1),
-('M000000002', 'Drink', 1),
-('M000000003', 'Rice', 1),
-('M000000003', 'Drink', 1),
-('M000000004', 'Batching', 2),
-('M000000005', 'Batching', 2),
-('M000000005', 'Drink', 1)
+('M00000001', 'Rice', 1),
+('M00000002', 'Drink', 1),
+('M00000003', 'Rice', 1),
+('M00000003', 'Drink', 1),
+('M00000004', 'Batching', 2),
+('M00000005', 'Batching', 2),
+('M00000005', 'Drink', 1)
 ;
 -- end add data --
