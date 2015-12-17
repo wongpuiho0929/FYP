@@ -47,7 +47,7 @@ CREATE TABLE `orders`(
 ) CHARACTER SET = utf8;
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
-	`name` varchar(100) NOT NULL,
+	`name` varchar(70) NOT NULL,
 	`price` numeric(5,2) NOT NULL,
 	`sPrice` numeric(5,2) NOT NULL,
 	`img` varchar(50) NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `orderFood`(
 ) CHARACTER SET = utf8;
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
-	`name` varchar(50) NOT NULL,
+	`name` varchar(70) NOT NULL,
 	`price` numeric(5,2) NULL,
 	`img` varchar(50) NULL,
 	`mCateId` varchar(10) NOT NULL,
@@ -79,12 +79,13 @@ CREATE TABLE `menuFood`(
 ) CHARACTER SET = utf8;
 CREATE TABLE `menuCategory`(
 	`mCateId` varchar(10) NOT NULL,
-	`name` varchar(10) NOT NULL,
+	`img` varchar(50) NULL,
+	`name` varchar(50) NOT NULL,
 	PRIMARY KEY(`mCateId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `foodType`(
 	`fTypeId` varchar(10) NOT NULL,
-	`name` varchar(10) NOT NULL,
+	`name` varchar(20) NOT NULL,
 	PRIMARY KEY(`fTypeId`)
 ) CHARACTER SET = utf8;
 ALTER TABLE `stuHistory`
@@ -165,7 +166,7 @@ SELECT M.menuId,
 M.name,
 M.price,
 M.img,
-GROUP_CONCAT(CONCAT(FT.name,'x',MF.many)) 'content' 
+GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content' 
 FROM menu M, menufood MF, foodtype FT
 WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId
 GROUP BY M.menuId;
