@@ -1,12 +1,16 @@
 -- db name :fyp_db --
+SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `menuFood`;
 DROP TABLE IF EXISTS `orderFood`;
 DROP TABLE IF EXISTS `food`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `menu`;
+DROP TABLE IF EXISTS `staff`;
 DROP TABLE IF EXISTS `stuHistory`;
 DROP TABLE IF EXISTS `student`;
-DROP TABLE IF EXISTS `staff`;
+DROP TABLE IF EXISTS `menuCategory`;
+DROP TABLE IF EXISTS `foodType`;
+SET FOREIGN_KEY_CHECKS=1;
 
 -- create table --
 CREATE TABLE `staff`(
@@ -43,13 +47,13 @@ CREATE TABLE `orders`(
 ) CHARACTER SET = utf8;
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
-	`name` varchar(50) NOT NULL,
+	`name` varchar(100) NOT NULL,
 	`price` numeric(5,2) NOT NULL,
 	`sPrice` numeric(5,2) NOT NULL,
 	`img` varchar(50) NULL,
 	`qty` integer NOT NULL,
 	`dQty` integer NOT NULL,
-	`type`  varchar(10) NOT NULL,
+	`fTypeId`  varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`foodId`)
 ) CHARACTER SET = utf8;
@@ -64,13 +68,24 @@ CREATE TABLE `menu`(
 	`name` varchar(50) NOT NULL,
 	`price` numeric(5,2) NULL,
 	`img` varchar(50) NULL,
+	`mCateId` varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL,
 	PRIMARY KEY(`menuId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `menuFood`(
 	`menuId` varchar(10) NOT NULL,
-	`type` varchar(10) NOT NULL,
+	`fTypeId` varchar(10) NOT NULL,
 	`many` integer NOT NULL DEFAULT 1
+) CHARACTER SET = utf8;
+CREATE TABLE `menuCategory`(
+	`mCateId` varchar(10) NOT NULL,
+	`name` varchar(10) NOT NULL,
+	PRIMARY KEY(`mCateId`)
+) CHARACTER SET = utf8;
+CREATE TABLE `foodType`(
+	`fTypeId` varchar(10) NOT NULL,
+	`name` varchar(10) NOT NULL,
+	PRIMARY KEY(`fTypeId`)
 ) CHARACTER SET = utf8;
 ALTER TABLE `stuHistory`
 ADD CONSTRAINT `stuIdH_fk1` FOREIGN KEY(`stuId`) REFERENCES `student`(`stuId`)
@@ -80,11 +95,18 @@ ADD CONSTRAINT `stuIdH_fk2` FOREIGN KEY(`stuId`) REFERENCES `student`(`stuId`),
 ADD CONSTRAINT `menuId_fk1` FOREIGN KEY(`menuId`) REFERENCES `menu`(`menuId`)
 ;
 ALTER TABLE `menuFood`
-ADD CONSTRAINT `menuId_fk2` FOREIGN KEY(`menuId`) REFERENCES `menu`(`menuId`)
+ADD CONSTRAINT `menuId_fk2` FOREIGN KEY(`menuId`) REFERENCES `menu`(`menuId`),
+ADD CONSTRAINT `fType_fk1` FOREIGN KEY(`fTypeId`) REFERENCES `foodType`(`fTypeId`)
 ;
 ALTER TABLE `orderFood`
 ADD CONSTRAINT `orderDate_fk1` FOREIGN KEY(`orderDate`, `orderId`) REFERENCES `orders`(`orderDate`, `orderId`),
 ADD CONSTRAINT `foodId_fk1` FOREIGN KEY(`foodId`) REFERENCES `food`(`foodId`)
+;
+ALTER TABLE `food`
+ADD CONSTRAINT `fType_fk2` FOREIGN KEY(`fTypeId`) REFERENCES `foodType`(`fTypeId`)
+;
+ALTER TABLE `menu`
+ADD CONSTRAINT `mCate_fk1` FOREIGN KEY(`mCateId`) REFERENCES `menuCategory`(`mCateId`)
 ;
 -- end create table --
 
@@ -97,31 +119,53 @@ INSERT INTO `staff` (`username`, `password`, `position`, `name`) VALUES
 ('admin', 'admin', 'manager', 'admin'),
 ('tommy', 'tommy', 'staff', 'tommy')
 ;
-INSERT INTO `food` (`foodId`, `name`, `price`, `sPrice`, `qty`, `dQty`, `type`, `isShow`) VALUES
-('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', 30, 0, 100, 100, 'Rice', 'Y'),
-('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', 30, 0, 100, 100, 'Rice', 'Y'),
-('F00000003', '即磨咖啡(ground coffee)', 12, 0, 100, 100, 'Drink', 'Y'),
-('F00000004', '凍檸茶(Ice lemon tea)', 15, 3, 100, 100, 'Drink', 'Y'),
-('F00000005', '紅豆冰(Red bean ice)', 18, 8, 100, 100, 'Drink', 'Y'),
-('F00000006', '叉燒(Barbecue pork)', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000007', '燒鴨(Roast duck)', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000008', '燒肉(Roasted pork)', 30, 0, 100, 100, 'Batching', 'Y'),
-('F00000009', '切雞(Cut chicken)', 30, 0, 100, 100, 'Batching', 'Y')
+INSERT INTO `foodType`(`fTypeId`, `name`) VALUES
+('FT00000001', 'Rice'),
+('FT00000002', 'Drink'),
+('FT00000003', 'Batching'),
+('FT00000004', 'siu mei Batching')
 ;
-INSERT INTO `Menu` (`menuId`, `name`, `price`, `isShow`) VALUES
-('M00000001', '飯類(Rice)', null, 'Y'),
-('M00000002', '飲品(Drink)', null, 'Y'),
-('M00000003', '套餐(Set food)', null, 'Y'),
-('M00000004', '雙餸飯(Rice with two choices of sides)', null, 'Y'),
-('M00000005', '雙餸飯套餐(Set food of Rice with two choices of sides)', null, 'Y')
+INSERT INTO `food` (`foodId`, `name`, `price`, `sPrice`, `qty`, `dQty`, `fTypeId`, `isShow`) VALUES
+('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', 30, 0, 100, 100, 'FT00000001', 'Y'),
+('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', 30, 0, 100, 100, 'FT00000001', 'Y'),
+('F00000003', '即磨咖啡(ground coffee)', 12, 0, 100, 100, 'FT00000002', 'Y'),
+('F00000004', '凍檸茶(Ice lemon tea)', 15, 3, 100, 100, 'FT00000002', 'Y'),
+('F00000005', '紅豆冰(Red bean ice)', 18, 8, 100, 100, 'FT00000002', 'Y'),
+('F00000006', '叉燒(Barbecue pork)', 30, 0, 100, 100, 'FT00000004', 'Y'),
+('F00000007', '燒鴨(Roast duck)', 30, 0, 100, 100, 'FT00000004', 'Y'),
+('F00000008', '燒肉(Roasted pork)', 30, 0, 100, 100, 'FT00000004', 'Y'),
+('F00000009', '切雞(Cut chicken)', 30, 0, 100, 100, 'FT00000004', 'Y')
 ;
-INSERT INTO `menuFood` (`menuId`, `type`, `many`) VALUES
-('M00000001', 'Rice', 1),
-('M00000002', 'Drink', 1),
-('M00000003', 'Rice', 1),
-('M00000003', 'Drink', 1),
-('M00000004', 'Batching', 2),
-('M00000005', 'Batching', 2),
-('M00000005', 'Drink', 1)
+INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
+('MC00000001', '正價(Regular price)'),
+('MC00000002', '飯類(Rice Category)'),
+('MC00000003', '燒味(siu mei)')
+;
+INSERT INTO `Menu` (`menuId`, `name`, `price`, `mCateId`, `isShow`) VALUES
+('M00000001', '飯類(Rice Category)', null, 'MC00000001', 'Y'),
+('M00000002', '飲品(Drink Category)', null, 'MC00000001', 'Y'),
+('M00000003', '套餐(Set rice)', 30, 'MC00000002', 'Y'),
+('M00000004', '雙餸燒味飯(siu mei rice with two choices of sides)', 25, 'MC00000003', 'Y'),
+('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', 30, 'MC00000003', 'Y')
+;
+INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
+('M00000001', 'FT00000001', 1),
+('M00000002', 'FT00000002', 1),
+('M00000003', 'FT00000001', 1),
+('M00000003', 'FT00000002', 1),
+('M00000004', 'FT00000004', 2),
+('M00000005', 'FT00000004', 2),
+('M00000005', 'FT00000002', 1)
 ;
 -- end add data --
+
+
+--get menu--
+SELECT M.menuId,
+M.name,
+M.price,
+M.img,
+GROUP_CONCAT(CONCAT(FT.name,'x',MF.many)) 'content' 
+FROM menu M, menufood MF, foodtype FT
+WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId
+GROUP BY M.menuId;
