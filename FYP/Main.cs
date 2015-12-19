@@ -11,65 +11,41 @@ namespace Login
 {
     public partial class Main : Form
     {
-        private Login lg;
-        private static Form menu,maintainUser,maintainMenu,addValue,viewOrder,report;
-        public Database database;
-        
+        private Login login;
 
-        public Main(Login lg)
+        public Main(Login login)
         {
             InitializeComponent();
-            this.lg =lg;
-          
-            this.database = ((Login)lg).database;
-            setFrom();
-
+            this.login = login;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void mrnuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void setFrom() { 
-            menu = new Menu(this);
-            maintainUser = new MaintainUser(this);
-            maintainMenu = new MaintainMenu(this);
-            addValue = new AddValue(this);
-            viewOrder = new ViewOrder(this);
-            report = new Report(this);
-            Form [] fm = {menu,maintainUser,maintainMenu,addValue,viewOrder,report};
-            for (int i = 0; i < fm.Length; i++) {
-                fm[i].MdiParent = this;
-                fm[i].FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                fm[i].Dock = DockStyle.Fill;
-
+            System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
+            var y = screen.WorkingArea.Width;
+           
+            y = y / 5;
+            var x = btn_AddValue.Size.Height;
+            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder, btn_Report };
+            for (int i = 0; i < btn.Length; i++) {
+                btn[i].Size = new Size(y, x);
             }
+            for (int i = 1; i < btn.Length; i++)
+            {
+                listBox1.Items.Add(btn[i - 1].Location.X);
+                x = btn[i-1].Location.X + btn[i].Size.Width;
+                btn[i].Location = new Point(x,3);
+            }
+            timer1.Start();
+            
         }
 
-        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Close();
-            lg.Show();
+           
+            this.label1.Text = DateTime.Now.ToString();
         }
 
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            maintainMenu.Show();
-        }
 
-        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            maintainUser.Show();
-         
-
-        }
-
-    
     }
 }

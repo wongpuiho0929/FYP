@@ -28,132 +28,143 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mrnuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Report = new System.Windows.Forms.Button();
+            this.btn_ViewOrder = new System.Windows.Forms.Button();
+            this.btn_Staff = new System.Windows.Forms.Button();
+            this.btn_Menu = new System.Windows.Forms.Button();
+            this.btn_AddValue = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.searchToolStripMenuItem,
-            this.xToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(773, 27);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menubar";
+            this.panel1.Controls.Add(this.btn_Report);
+            this.panel1.Controls.Add(this.btn_ViewOrder);
+            this.panel1.Controls.Add(this.btn_Staff);
+            this.panel1.Controls.Add(this.btn_Menu);
+            this.panel1.Controls.Add(this.btn_AddValue);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 410);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1213, 117);
+            this.panel1.TabIndex = 0;
             // 
-            // fileToolStripMenuItem
+            // btn_Report
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
-            this.fileToolStripMenuItem.Text = "File";
+            this.btn_Report.Location = new System.Drawing.Point(995, 3);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(206, 111);
+            this.btn_Report.TabIndex = 9;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.UseVisualStyleBackColor = true;
             // 
-            // editToolStripMenuItem
+            // btn_ViewOrder
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem,
-            this.accountToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(48, 23);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.btn_ViewOrder.Location = new System.Drawing.Point(730, 3);
+            this.btn_ViewOrder.Name = "btn_ViewOrder";
+            this.btn_ViewOrder.Size = new System.Drawing.Size(206, 111);
+            this.btn_ViewOrder.TabIndex = 8;
+            this.btn_ViewOrder.Text = "View Order";
+            this.btn_ViewOrder.UseVisualStyleBackColor = true;
             // 
-            // menuToolStripMenuItem
+            // btn_Staff
             // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.menuToolStripMenuItem.Text = "Menu";
-            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            this.btn_Staff.Location = new System.Drawing.Point(490, 3);
+            this.btn_Staff.Name = "btn_Staff";
+            this.btn_Staff.Size = new System.Drawing.Size(206, 111);
+            this.btn_Staff.TabIndex = 7;
+            this.btn_Staff.Text = "Staff";
+            this.btn_Staff.UseVisualStyleBackColor = true;
             // 
-            // accountToolStripMenuItem
+            // btn_Menu
             // 
-            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.accountToolStripMenuItem.Text = "Account";
-            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
+            this.btn_Menu.Location = new System.Drawing.Point(250, 3);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(206, 111);
+            this.btn_Menu.TabIndex = 6;
+            this.btn_Menu.Text = "Menu";
+            this.btn_Menu.UseVisualStyleBackColor = true;
             // 
-            // searchToolStripMenuItem
+            // btn_AddValue
             // 
-            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountToolStripMenuItem1,
-            this.orderToolStripMenuItem,
-            this.mrnuToolStripMenuItem});
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
-            this.searchToolStripMenuItem.Text = "Search";
-           
+            this.btn_AddValue.Location = new System.Drawing.Point(10, 3);
+            this.btn_AddValue.Name = "btn_AddValue";
+            this.btn_AddValue.Size = new System.Drawing.Size(206, 111);
+            this.btn_AddValue.TabIndex = 5;
+            this.btn_AddValue.Text = "Add value";
+            this.btn_AddValue.UseVisualStyleBackColor = true;
             // 
-            // accountToolStripMenuItem1
+            // listBox1
             // 
-            this.accountToolStripMenuItem1.Name = "accountToolStripMenuItem1";
-            this.accountToolStripMenuItem1.Size = new System.Drawing.Size(134, 24);
-            this.accountToolStripMenuItem1.Text = "Account";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 57);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(481, 319);
+            this.listBox1.TabIndex = 1;
             // 
-            // orderToolStripMenuItem
+            // panel2
             // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1213, 27);
+            this.panel2.TabIndex = 2;
             // 
-            // mrnuToolStripMenuItem
+            // label1
             // 
-            this.mrnuToolStripMenuItem.Name = "mrnuToolStripMenuItem";
-            this.mrnuToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.mrnuToolStripMenuItem.Text = "Menu";
-            this.mrnuToolStripMenuItem.Click += new System.EventHandler(this.mrnuToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
-            // xToolStripMenuItem
+            // timer1
             // 
-            this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(31, 23);
-            this.xToolStripMenuItem.Text = "X";
-            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 461);
-            this.ControlBox = false;
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1213, 527);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mrnuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_AddValue;
+        private System.Windows.Forms.Button btn_Report;
+        private System.Windows.Forms.Button btn_ViewOrder;
+        private System.Windows.Forms.Button btn_Staff;
+        private System.Windows.Forms.Button btn_Menu;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+
     }
 }
