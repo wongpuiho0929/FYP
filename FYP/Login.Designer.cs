@@ -156,9 +156,9 @@
         private System.Windows.Forms.Label lab_userName;
         private System.Windows.Forms.Label lab_password;
         private System.Windows.Forms.TextBox txt_userName;
-        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Cancel;
+        public System.Windows.Forms.TextBox txt_password;
     }
 }

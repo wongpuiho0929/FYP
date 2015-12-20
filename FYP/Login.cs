@@ -21,7 +21,7 @@ namespace Login
         {
             Thread t = new Thread(new ThreadStart(SplashScreen));
             t.Start();
-            Thread.Sleep(2500);
+            //Thread.Sleep(2500);
             InitializeComponent();
             t.Abort();
             database = new Database();

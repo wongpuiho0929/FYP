@@ -11,9 +11,17 @@ namespace Login
 {
     public partial class MaintainMenu : Form
     {
-        public MaintainMenu()
+        private Main main;
+
+        public MaintainMenu(Main main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void MaintainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
--- db name :fyp_db --
+﻿-- db name :fyp_db --
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `menuFood`;
 DROP TABLE IF EXISTS `orderFood`;
