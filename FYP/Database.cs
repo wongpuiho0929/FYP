@@ -18,7 +18,7 @@ namespace Login
         //connetionString = "Server=" + server + ";Database=" + database + ";";
            public void Connection()
             {
-                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + ";Pwd="+password+"; Charset=utf8";
+                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + ";Pwd=" + password + "; Charset=utf8";
                 cnn = new MySqlConnection(connetionString);
                 
             }
@@ -41,7 +41,7 @@ namespace Login
 
                MySqlCommand command = cnn.CreateCommand();
                cnn.Open();
-               MySqlCommand s = new MySqlCommand("set names big5", cnn);
+               MySqlCommand s = new MySqlCommand("set names utf8", cnn);
                s.ExecuteNonQuery();
                s.Dispose();
                String cmdText = sql;

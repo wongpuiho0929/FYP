@@ -34,7 +34,7 @@ namespace Login
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            DataTable db_account = database.getDb("account");
+            DataTable db_account = database.getDb("staff");
             for (int i = 0; i < db_account.Rows.Count;i++ ){
                 if (txt_userName.Text.Equals(db_account.Rows[i]["userName"].ToString()) && txt_password.Text.Equals(db_account.Rows[i]["password"].ToString()))
                 {

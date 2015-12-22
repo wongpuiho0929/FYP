@@ -115,13 +115,15 @@
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(10, 58);
+            this.listBox1.Location = new System.Drawing.Point(10, 55);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(838, 349);
+            this.listBox1.Size = new System.Drawing.Size(838, 334);
             this.listBox1.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FloralWhite;
+            this.panel2.CausesValidation = false;
             this.panel2.Controls.Add(this.lab_username);
             this.panel2.Controls.Add(this.lab_status);
             this.panel2.Controls.Add(this.Close);
@@ -129,7 +131,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1213, 51);
+            this.panel2.Size = new System.Drawing.Size(1213, 49);
             this.panel2.TabIndex = 2;
             // 
             // lab_username
@@ -188,6 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1213, 527);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listBox1);

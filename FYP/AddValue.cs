@@ -33,6 +33,7 @@ namespace Login
             lab_Info.Text = "Info";
             txt_studID.Enabled = true;
             dt_Student = db.getDb("Student");
+            this.ActiveControl = txt_studID;
         }
 
        
