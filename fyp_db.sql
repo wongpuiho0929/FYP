@@ -24,7 +24,7 @@ CREATE TABLE `student`(
 	`stuId` varchar(10) NOT NULL,
 	`password` varchar(30) NOT NULL,
 	`name` varchar(30) NOT NULL,
-	`balance` numeric(5,2) NOT NULL DEFAULT 0,
+	`balance` numeric(5,1) NOT NULL DEFAULT 0,
 	`email` varchar(30) NOT NULL,
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
 	PRIMARY KEY (`stuId`)
@@ -40,16 +40,16 @@ CREATE TABLE `orders`(
 	`stuId` varchar(10) NOT NULL,
 	`oTakeTime` time NOT NULL,
 	`takeTime` time NULL,
-	`status` varchar(10) NOT NULL,
-	`totalPrice` numeric(5,2) NOT NULL,
+	`status` varchar(10) NOT NULL DEFAULT 'processing',
+	`totalPrice` numeric(5,1) NOT NULL,
 	`menuId` varchar(10) NOT NULL,
 	PRIMARY KEY (`orderDate`,`orderId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
 	`name` varchar(70) NOT NULL,
-	`price` numeric(5,2) NOT NULL,
-	`sPrice` numeric(5,2) NOT NULL,
+	`price` numeric(5,1) NOT NULL,
+	`sPrice` numeric(5,1) NOT NULL,
 	`img` varchar(50) NULL,
 	`qty` integer NOT NULL,
 	`dQty` integer NOT NULL,
@@ -61,12 +61,12 @@ CREATE TABLE `orderFood`(
 	`orderDate` date NOT NULL,
 	`orderId` varchar(10) NOT NULL,
 	`foodId` varchar(10) NOT NULL,
-	`price` numeric(5,2) NOT NULL
+	`price` numeric(5,1) NOT NULL
 ) CHARACTER SET = utf8;
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
 	`name` varchar(70) NOT NULL,
-	`price` numeric(5,2) NULL,
+	`price` numeric(5,1) NULL,
 	`img` varchar(50) NULL,
 	`mCateId` varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL DEFAULT 'Y',
