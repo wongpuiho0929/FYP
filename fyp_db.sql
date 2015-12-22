@@ -163,12 +163,11 @@ INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
 
 -- add test image --
 UPDATE `menuCategory` SET `img`='image/test.png' WHERE `mCateId`='MC00000001';
+UPDATE `food` SET `img` = 'image/test.png' WHERE `foodId` = 'F00000001';
+UPDATE `menu` SET `img` = 'image/test.png' WHERE `menuId` = 'M00000001';
 
 --get menu--
-SELECT M.menuId,
-M.name,
-M.price,
-M.img,
+SELECT M.menuId,M.name,M.price,M.img,
 GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content' 
 FROM menu M, menufood MF, foodtype FT
 WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId AND M.isShow='Y'
