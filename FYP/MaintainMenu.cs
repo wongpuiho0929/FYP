@@ -12,10 +12,10 @@ namespace Login
     public partial class MaintainMenu : Form
     {
         private Main main;
-        private Database db;
-        private List<CheckBox> CheckBoxes = new List<CheckBox>();
+        public  Database db;
+        public  List<CheckBox> CheckBoxes = new List<CheckBox>();
         private DataTable chkbox ;
-        private String sql="";
+        public  String sql="";
 
 
         public MaintainMenu(Main main)
@@ -26,7 +26,7 @@ namespace Login
             
         }
 
-        private void MaintainMenu_Load(object sender, EventArgs e)
+        public  void MaintainMenu_Load(object sender, EventArgs e)
         {
             int intialTop = 50;
             chkbox = db.getDb("Foodtype");
@@ -194,6 +194,14 @@ namespace Login
             db.queny(s);
             
             SearchByChk(sql);
+        }
+
+
+
+        private void btn_FoodType_Click_1(object sender, EventArgs e)
+        {
+            FoodType ft = new FoodType(this);
+            ft.ShowDialog();
         }
        
         

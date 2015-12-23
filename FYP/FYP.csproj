@@ -72,6 +72,12 @@
       <DependentUpon>AddValue.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="FoodType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodType.Designer.cs">
+      <DependentUpon>FoodType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="AddValue.resx">
       <DependentUpon>AddValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodType.resx">
+      <DependentUpon>FoodType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

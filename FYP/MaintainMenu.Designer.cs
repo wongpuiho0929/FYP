@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_menuFood = new System.Windows.Forms.TabPage();
+            this.tab_menuCategory = new System.Windows.Forms.TabPage();
+            this.tab_menu = new System.Windows.Forms.TabPage();
             this.tab_food = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,11 +61,8 @@
             this.lab_FID = new System.Windows.Forms.Label();
             this.DGW_show = new System.Windows.Forms.DataGridView();
             this.lab_FoodName = new System.Windows.Forms.Label();
-            this.tab_foodtype = new System.Windows.Forms.TabPage();
-            this.tab_menu = new System.Windows.Forms.TabPage();
-            this.tab_menuCategory = new System.Windows.Forms.TabPage();
-            this.tab_menuFood = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btn_FoodType = new System.Windows.Forms.Button();
             this.tab_food.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,34 +74,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_SPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGW_show)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tab_menuFood
             // 
-            this.tabControl1.Controls.Add(this.tab_food);
-            this.tabControl1.Controls.Add(this.tab_foodtype);
-            this.tabControl1.Controls.Add(this.tab_menu);
-            this.tabControl1.Controls.Add(this.tab_menuCategory);
-            this.tabControl1.Controls.Add(this.tab_menuFood);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1183, 734);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.tabControl1.TabIndex = 0;
+            this.tab_menuFood.BackColor = System.Drawing.Color.Azure;
+            this.tab_menuFood.Location = new System.Drawing.Point(4, 39);
+            this.tab_menuFood.Name = "tab_menuFood";
+            this.tab_menuFood.Size = new System.Drawing.Size(1175, 691);
+            this.tab_menuFood.TabIndex = 4;
+            this.tab_menuFood.Text = "Menu Food";
+            // 
+            // tab_menuCategory
+            // 
+            this.tab_menuCategory.BackColor = System.Drawing.Color.Azure;
+            this.tab_menuCategory.Location = new System.Drawing.Point(4, 39);
+            this.tab_menuCategory.Name = "tab_menuCategory";
+            this.tab_menuCategory.Size = new System.Drawing.Size(1175, 691);
+            this.tab_menuCategory.TabIndex = 3;
+            this.tab_menuCategory.Text = "Menu Category";
+            // 
+            // tab_menu
+            // 
+            this.tab_menu.BackColor = System.Drawing.Color.Azure;
+            this.tab_menu.Location = new System.Drawing.Point(4, 39);
+            this.tab_menu.Name = "tab_menu";
+            this.tab_menu.Size = new System.Drawing.Size(1175, 691);
+            this.tab_menu.TabIndex = 2;
+            this.tab_menu.Text = "Menu";
             // 
             // tab_food
             // 
             this.tab_food.BackColor = System.Drawing.Color.Transparent;
             this.tab_food.Controls.Add(this.splitContainer1);
             this.tab_food.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.tab_food.Location = new System.Drawing.Point(4, 30);
+            this.tab_food.Location = new System.Drawing.Point(4, 39);
             this.tab_food.Name = "tab_food";
             this.tab_food.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_food.Size = new System.Drawing.Size(1175, 700);
+            this.tab_food.Size = new System.Drawing.Size(1175, 691);
             this.tab_food.TabIndex = 0;
             this.tab_food.Text = "Food";
             this.tab_food.UseVisualStyleBackColor = true;
@@ -116,6 +126,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer1.Panel1.Controls.Add(this.btn_FoodType);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
@@ -146,7 +157,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.lab_FID);
             this.splitContainer1.Panel2.Controls.Add(this.DGW_show);
             this.splitContainer1.Panel2.Controls.Add(this.lab_FoodName);
-            this.splitContainer1.Size = new System.Drawing.Size(1169, 694);
+            this.splitContainer1.Size = new System.Drawing.Size(1169, 685);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -189,7 +200,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.groupBox1.Location = new System.Drawing.Point(9, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 283);
+            this.groupBox1.Size = new System.Drawing.Size(187, 250);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Food Type:";
@@ -421,6 +432,7 @@
             this.DGW_show.Name = "DGW_show";
             this.DGW_show.ReadOnly = true;
             this.DGW_show.RowTemplate.Height = 27;
+            this.DGW_show.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGW_show.Size = new System.Drawing.Size(965, 386);
             this.DGW_show.TabIndex = 2;
             this.DGW_show.SelectionChanged += new System.EventHandler(this.DGW_show_SelectionChanged);
@@ -436,42 +448,33 @@
             this.lab_FoodName.TabIndex = 1;
             this.lab_FoodName.Text = "Food Information:";
             // 
-            // tab_foodtype
+            // tabControl1
             // 
-            this.tab_foodtype.Location = new System.Drawing.Point(4, 30);
-            this.tab_foodtype.Name = "tab_foodtype";
-            this.tab_foodtype.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_foodtype.Size = new System.Drawing.Size(1175, 700);
-            this.tab_foodtype.TabIndex = 1;
-            this.tab_foodtype.Text = "Food Type";
-            this.tab_foodtype.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.tab_food);
+            this.tabControl1.Controls.Add(this.tab_menu);
+            this.tabControl1.Controls.Add(this.tab_menuCategory);
+            this.tabControl1.Controls.Add(this.tab_menuFood);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Comic Sans MS", 13F);
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1183, 734);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl1.TabIndex = 0;
             // 
-            // tab_menu
+            // btn_FoodType
             // 
-            this.tab_menu.Location = new System.Drawing.Point(4, 30);
-            this.tab_menu.Name = "tab_menu";
-            this.tab_menu.Size = new System.Drawing.Size(1175, 700);
-            this.tab_menu.TabIndex = 2;
-            this.tab_menu.Text = "Menu";
-            this.tab_menu.UseVisualStyleBackColor = true;
-            // 
-            // tab_menuCategory
-            // 
-            this.tab_menuCategory.Location = new System.Drawing.Point(4, 30);
-            this.tab_menuCategory.Name = "tab_menuCategory";
-            this.tab_menuCategory.Size = new System.Drawing.Size(1175, 700);
-            this.tab_menuCategory.TabIndex = 3;
-            this.tab_menuCategory.Text = "Menu Category";
-            this.tab_menuCategory.UseVisualStyleBackColor = true;
-            // 
-            // tab_menuFood
-            // 
-            this.tab_menuFood.Location = new System.Drawing.Point(4, 30);
-            this.tab_menuFood.Name = "tab_menuFood";
-            this.tab_menuFood.Size = new System.Drawing.Size(1175, 700);
-            this.tab_menuFood.TabIndex = 4;
-            this.tab_menuFood.Text = "Menu Food";
-            this.tab_menuFood.UseVisualStyleBackColor = true;
+            this.btn_FoodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_FoodType.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.btn_FoodType.Location = new System.Drawing.Point(10, 396);
+            this.btn_FoodType.Name = "btn_FoodType";
+            this.btn_FoodType.Size = new System.Drawing.Size(181, 36);
+            this.btn_FoodType.TabIndex = 1;
+            this.btn_FoodType.Text = "Add Type";
+            this.btn_FoodType.UseVisualStyleBackColor = true;
+            this.btn_FoodType.Click += new System.EventHandler(this.btn_FoodType_Click_1);
             // 
             // MaintainMenu
             // 
@@ -485,7 +488,6 @@
             this.Text = "MaintainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintainMenu_Load);
-            this.tabControl1.ResumeLayout(false);
             this.tab_food.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -500,32 +502,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_SPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGW_show)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tab_food;
-        private System.Windows.Forms.TabPage tab_foodtype;
-        private System.Windows.Forms.TabPage tab_menu;
-        private System.Windows.Forms.TabPage tab_menuCategory;
         private System.Windows.Forms.TabPage tab_menuFood;
-        private System.Windows.Forms.Label lab_FoodName;
+        private System.Windows.Forms.TabPage tab_menuCategory;
+        private System.Windows.Forms.TabPage tab_menu;
+        private System.Windows.Forms.TabPage tab_food;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label lab_Search;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chk_N;
         private System.Windows.Forms.CheckBox chk_Y;
-        private System.Windows.Forms.DataGridView DGW_show;
-        private System.Windows.Forms.Label lab_FID;
-        private System.Windows.Forms.TextBox txt_FName;
-        private System.Windows.Forms.Label lab_FName;
-        private System.Windows.Forms.TextBox txt_FID;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lab_Search;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_maintain;
+        private System.Windows.Forms.ComboBox combo_isShow;
         private System.Windows.Forms.NumericUpDown num_dQty;
         private System.Windows.Forms.NumericUpDown num_qty;
         private System.Windows.Forms.NumericUpDown num_SPrice;
@@ -536,10 +534,16 @@
         private System.Windows.Forms.Label lab_qty;
         private System.Windows.Forms.Label lab_SPrice;
         private System.Windows.Forms.Label lab_Price;
-        private System.Windows.Forms.ComboBox combo_isShow;
-        private System.Windows.Forms.ComboBox combo_foodType;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_maintain;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.TextBox txt_FName;
+        private System.Windows.Forms.Label lab_FName;
+        private System.Windows.Forms.TextBox txt_FID;
+        private System.Windows.Forms.Label lab_FID;
+        private System.Windows.Forms.DataGridView DGW_show;
+        private System.Windows.Forms.Label lab_FoodName;
+        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_FoodType;
+        public System.Windows.Forms.ComboBox combo_foodType;
+
     }
 }
