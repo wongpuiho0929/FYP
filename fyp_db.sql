@@ -61,7 +61,8 @@ CREATE TABLE `orderFood`(
 	`orderDate` date NOT NULL,
 	`orderId` varchar(10) NOT NULL,
 	`foodId` varchar(10) NOT NULL,
-	`price` numeric(5,1) NOT NULL
+	`price` numeric(5,1) NOT NULL,
+	`sprice` numeric(5,1) NOT NULL
 ) CHARACTER SET = utf8;
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
