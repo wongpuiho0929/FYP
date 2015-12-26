@@ -1,4 +1,4 @@
-﻿-- db name :fyp_db --
+-- db name :fyp_db --
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `menuFood`;
 DROP TABLE IF EXISTS `orderFood`;
@@ -30,6 +30,7 @@ CREATE TABLE `student`(
 	PRIMARY KEY (`stuId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `stuHistory`(
+	`datetime` datetime NOT NULL,
 	`stuId` varchar(10) NOT NULL,
 	`action` varchar(10) NOT NULL,
 	`balance` integer NOT NULL
@@ -192,6 +193,8 @@ UPDATE food SET qty-1 WHERE foodId='F00000005';
 
 INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) 
 VALUES(CURDATE(), 'O00000001', '140476338', '11:00', 38, 'M00000003');
+INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId)
+VALUES(CURDATE(), 'O00000001', '140476338', '11:00', (SELECT price FROM menu WHERE menuId='M00000003')+8.0, 'menuId'
 
 INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice)
 VALUES(CURDATE(), 'O00000001', 'F00000001',(SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')),
