@@ -277,3 +277,16 @@ GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content'
 FROM menu M, menufood MF, foodtype FT
 WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId AND M.isShow='Y'
 GROUP BY M.menuId;
+
+--add order--
+BEGIN;
+UPDATE food SET qty-1 WHERE foodId='F00000001';
+--re--
+UPDATE food SET qty-1 WHERE foodId='F00000005';
+--re--
+
+INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) 
+VALUES(CURDATE(), 'O00000001', '140476338', '11:00', 33, 'M00000003');
+
+INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice)
+VALUES(CURDATE(), 'O00000001', 'F00000001',(SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001'));
