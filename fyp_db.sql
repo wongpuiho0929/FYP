@@ -171,6 +171,11 @@ UPDATE `menuCategory` SET `img`='image/test.png' WHERE `mCateId`='MC00000001';
 UPDATE `food` SET `img` = 'image/test.png' WHERE `foodId` = 'F00000001';
 UPDATE `menu` SET `img` = 'image/test.png' WHERE `menuId` = 'M00000001';
 
+
+
+
+
+
 --get menu--
 SELECT M.menuId,M.name,M.price,M.img,
 GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content' 
