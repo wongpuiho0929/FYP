@@ -16,6 +16,7 @@ namespace Login
         public  List<CheckBox> CheckBoxes = new List<CheckBox>();
         private DataTable chkbox ;
         public  String sql="";
+        private Boolean chick = false;
 
 
         public MaintainMenu(Main main)
@@ -42,6 +43,19 @@ namespace Login
                 CheckBoxes.Add(chk);
                 intialTop += 20;
                 combo_foodType.Items.Add(chkbox.Rows[i]["name"].ToString());
+            }
+
+             //------------------------Menu------------------------------//
+            DataTable dt_menu = db.getDb("menu");
+            DataTable dt_menuCategory = db.getDb("menuCategory");
+            combo_MenuName.Items.Clear();
+            combo_MenuCategory.Items.Clear();
+            for (int i = 0; i < dt_menu.Rows.Count; i++)
+            {
+                combo_MenuName.Items.Add(dt_menu.Rows[i]["name"].ToString());
+            }
+            for (int i = 0; i < dt_menuCategory.Rows.Count; i++) {
+                combo_MenuCategory.Items.Add(dt_menuCategory.Rows[i]["name"].ToString());
             }
             
 
@@ -203,12 +217,196 @@ namespace Login
             FoodType ft = new FoodType(this);
             ft.ShowDialog();
         }
-       
-        
 
-      
 
+        //---------------------Menu----------------------------------------------//
+        private void combo_Mame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt_menu = db.getDb("menu");
+            DataTable dt_menuCategory = db.getDb("menuCategory");
+            for(int i =0;i<dt_menu.Rows.Count;i++){
+                if(combo_MenuName.Text.Equals(dt_menu.Rows[i]["name"]))
+                {
+                    txt_MenuID.Text = dt_menu.Rows[i]["menuId"].ToString();
+                    txt_menuName.Text = dt_menu.Rows[i]["name"].ToString();
+                    for (int k = 0; k < dt_menuCategory.Rows.Count; k++)
+                    {
+                        if (dt_menuCategory.Rows[k]["mCateid"].Equals(dt_menu.Rows[i]["mCateid"]))
+                        {
+                            combo_MenuCategory.SelectedIndex = combo_MenuCategory.Items.IndexOf(dt_menuCategory.Rows[k]["name"].ToString());
+                            break;
+                        }
+                    }
+                    if (dt_menu.Rows[i]["price"].ToString().Equals(""))
+                    {
+                        num_Mprice.Value = 0;
+                        chk_Null.Checked = true;
+                    }
+                    else
+                    {
+                        chk_Null.Checked = false;
+                        num_Mprice.Value = Convert.ToDecimal(dt_menu.Rows[i]["price"].ToString());
+                    }
+                    combo_MisShow.SelectedIndex = combo_isShow.Items.IndexOf(dt_menu.Rows[i]["isshow"].ToString());
+
+                }   
+          
+            }
+        }
+
+        private void chk_Null_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chick)
+            {
+                if (chk_Null.Checked)
+                {
+                    num_Mprice.Enabled = false;
+                }
+                else
+                {
+                    num_Mprice.Enabled = true;
+                }
+            }
+        }
+
+        private void btn_MMaintain_Click(object sender, EventArgs e)
+        {
+            chick = true;
+            btn_MAdd.Enabled = false;
+            MenuEnable(true);
+            combo_MenuName.Enabled = false;
+            btn_MSave.Visible = true;
+        }
+
+        private void btn_MAdd_Click(object sender, EventArgs e)
+        {
+            chick = true;
+            btn_MMaintain.Enabled = false;
+            MenuEnable(true);
+            DataTable dt_Menu = db.getDb("Menu order by menuId  ASC");
+            String MID = dt_Menu.Rows[dt_Menu.Rows.Count - 1]["menuId"].ToString();
+            String str = "" + (Convert.ToInt32(MID.Substring(1)) + 1);
+            String pad = "00000000";
+            String ans = pad.Substring(0, pad.Length - str.Length) + str;
+            String MIDnum = "M" + ans;
+            txt_MenuID.Text = MIDnum;
+            txt_menuName.Text = "";
+            num_Mprice.Value = 0;
+            chk_Null.Checked = true;
+            combo_MenuCategory.SelectedIndex = 0;
+            btn_MAddSave.Visible = true;
+
+            
+        }
+
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            chick = false;
+            btn_MAdd.Enabled = true;
+            btn_MMaintain.Enabled = true;
+            MenuEnable(false);
+            combo_MenuName.Enabled = true;
+            btn_MAddSave.Visible = false;
+            btn_MSave.Visible = false;
+        }
+
+        private void MenuEnable(Boolean s) {
+            txt_MenuID.Enabled = s;
+            txt_menuName.Enabled = s;
+            num_Mprice.Enabled = s;
+            combo_MenuCategory.Enabled = s;
+            combo_MisShow.Enabled = s;
+            chk_Null.Enabled = s;
+            btn_Cancel.Visible = s;
+        }
+
+        private void btn_MSave_Click(object sender, EventArgs e)
+        {
+            UpdateMenu();
+            chick = false;
+            btn_MMaintain.Enabled = true;
+            btn_MAdd.Enabled = true;
+            MenuEnable(false);
+            combo_MenuName.Enabled = true;
+            btn_MSave.Visible = false;
+        }
+
+        private void btn_MAddSave_Click(object sender, EventArgs e)
+        {
+            MAddSave();
+            btn_MMaintain.Enabled = true;
+            btn_MAdd.Enabled = true;
+            MenuEnable(false);
+            combo_MenuName.Enabled = true;
+            btn_MAddSave.Visible = false;
+        }
+
+        private void MAddSave() {
+            String mId = txt_MenuID.Text;
+            String menuName = txt_menuName.Text;
+            Double mPrice = Convert.ToDouble(num_Mprice.Value);
+            String MenuCategory = combo_MenuCategory.SelectedItem.ToString();
+            DataTable dt_menuCategory = db.getDb("menuCategory");
+            for (int i = 0; i < dt_menuCategory.Rows.Count; i++)
+            {
+                if (dt_menuCategory.Rows[i]["name"].Equals(MenuCategory))
+                {
+                    MenuCategory = dt_menuCategory.Rows[i]["mCateId"].ToString();
+                    break;
+                }
+            }
+            String MisShow = combo_MisShow.SelectedItem.ToString();
+            if (!chk_Null.Checked)
+            {
+                String s = "INSERT INTO `menu`(`menuId`, `name`, `price`, `mCateId`, `isShow`) VALUES ('"+mId+"','"+menuName+"',"+mPrice+",'"+MenuCategory+"','"+MisShow+"')";
+                db.queny(s);
+                
+            }
+            else
+            {
+                String s = "INSERT INTO `menu`(`menuId`, `name`, `price`, `mCateId`, `isShow`) VALUES ('" + mId + "','" + menuName + "',null,'" + MenuCategory + "','" + MisShow + "')";
+                db.queny(s);
+            }
+        }
+
+        private void UpdateMenu() {
+            String mId = txt_MenuID.Text;
+            String menuName = txt_menuName.Text;
+            Double mPrice = Convert.ToDouble(num_Mprice.Value);
+            String MenuCategory = combo_MenuCategory.SelectedItem.ToString();
+            DataTable dt_menuCategory = db.getDb("menuCategory");
+            for (int i = 0; i < dt_menuCategory.Rows.Count; i++)
+            {
+                if (dt_menuCategory.Rows[i]["name"].Equals(MenuCategory))
+                {
+                    MenuCategory = dt_menuCategory.Rows[i]["mCateId"].ToString();
+                    break;
+                }
+            }
+            String MisShow = combo_MisShow.SelectedItem.ToString();
+            if (!chk_Null.Checked)
+            {
+                String s = "UPDATE `menu` SET `name`='" + menuName + "',`price`=" + mPrice + ",`mCateId`='" + MenuCategory + "',`isShow`='" + MisShow + "' WHERE menuID='" + mId + "';";
+                db.queny(s);
+            }
+            else
+            {
+                String s = "UPDATE `menu` SET `name`='" + menuName + "',`price`=null" + ",`mCateId`='" + MenuCategory + "',`isShow`='" + MisShow + "' WHERE menuID='" + mId + "';";
+                db.queny(s);
+            }
+            
+        }
+
+        private void btn_MenuCategory_Click(object sender, EventArgs e)
+        {
+            MaintainCategory MC = new MaintainCategory(this);
+            MC.ShowDialog();
+        }
+
+    
        
+
         
     }
 }
