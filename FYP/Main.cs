@@ -82,7 +82,7 @@ namespace Login
                     DataTable db_food = db.getDb("food where foodid='" + fid + "'");
                     s += db_food.Rows[0]["name"];
                 }
-                listBox1.Items.Add(s);
+                listBox1.Items.Insert(0,s);
                 numOfOrder++;
             }
         }

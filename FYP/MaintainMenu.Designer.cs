@@ -83,6 +83,7 @@
             this.DGW_show = new System.Windows.Forms.DataGridView();
             this.lab_FoodName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.tab_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -133,6 +134,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.button1);
             this.splitContainer2.Panel2.Controls.Add(this.btn_Cancel);
             this.splitContainer2.Panel2.Controls.Add(this.btn_MAddSave);
             this.splitContainer2.Panel2.Controls.Add(this.chk_Null);
@@ -459,6 +461,8 @@
             // 
             // btn_FoodType
             // 
+            this.btn_FoodType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_FoodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FoodType.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.btn_FoodType.Location = new System.Drawing.Point(11, 396);
@@ -472,6 +476,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.chk_N);
             this.groupBox2.Controls.Add(this.chk_Y);
             this.groupBox2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
@@ -510,6 +516,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.groupBox1.Location = new System.Drawing.Point(9, 140);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -522,6 +530,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(11, 71);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
@@ -530,6 +540,8 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.label1.Location = new System.Drawing.Point(5, 42);
@@ -540,6 +552,8 @@
             // 
             // lab_Search
             // 
+            this.lab_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lab_Search.AutoSize = true;
             this.lab_Search.Font = new System.Drawing.Font("Comic Sans MS", 13F);
             this.lab_Search.Location = new System.Drawing.Point(5, 2);
@@ -791,6 +805,16 @@
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(792, 502);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MaintainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -888,6 +912,7 @@
         private System.Windows.Forms.DataGridView DGW_show;
         private System.Windows.Forms.Label lab_FoodName;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button button1;
 
 
     }

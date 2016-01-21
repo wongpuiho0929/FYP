@@ -406,6 +406,12 @@ namespace Login
             MC.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MF.ShowDialog();
+        }
+
      
  
     }

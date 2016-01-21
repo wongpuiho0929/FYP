@@ -13,6 +13,7 @@ namespace Login
     {
         private MaintainMenu menu;
         private Database db;
+        private List<Label> labels = new List<Label>();
 
         public MaintainMenuFood(MaintainMenu menu)
         {
@@ -29,5 +30,26 @@ namespace Login
                 chkedListBox_FoodType.Items.Add(dt_FoodType.Rows[i]["name"]);
             }
         }
+
+        private void btn_NEXT_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("" + chkedListBox_FoodType.CheckedItems[0]);
+            int intialTop = 20;
+            for(int i=0;i<chkedListBox_FoodType.CheckedItems.Count;i++){
+                Label s = new Label();
+                s.Left = 5;
+                s.Top = intialTop;
+                s.Name = "Label" + i;
+                s.Text = chkedListBox_FoodType.CheckedItems[i].ToString();
+                flowLayoutPanel1.Controls.Add(s);
+                labels.Add(s);
+                intialTop += 20;
+            }
+            lab_NumberOfIem.Visible = true;
+            flowLayoutPanel1.Visible = true;
+            
+        }
+
+
     }
 }
