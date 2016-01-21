@@ -169,8 +169,20 @@ INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
 
 -- add test image --
 UPDATE `menuCategory` SET `img`='image/test.png' WHERE `mCateId`='MC00000001';
-UPDATE `food` SET `img` = 'image/test.png' WHERE `foodId` = 'F00000001';
 UPDATE `menu` SET `img` = 'image/test.png' WHERE `menuId` = 'M00000001';
+
+UPDATE `food` SET `img` = 'image/F00000001.jpg' WHERE `foodId` = 'F00000001';
+UPDATE `food` SET `img` = 'image/F00000002.jpg' WHERE `foodId` = 'F00000002';
+UPDATE `food` SET `img` = 'image/F00000003.jpg' WHERE `foodId` = 'F00000003';
+UPDATE `food` SET `img` = 'image/F00000004.jpg' WHERE `foodId` = 'F00000004';
+UPDATE `food` SET `img` = 'image/F00000005.jpg' WHERE `foodId` = 'F00000005';
+UPDATE `food` SET `img` = 'image/F00000006.jpg' WHERE `foodId` = 'F00000006';
+UPDATE `food` SET `img` = 'image/F00000007.jpg' WHERE `foodId` = 'F00000007';
+UPDATE `food` SET `img` = 'image/F00000008.jpg' WHERE `foodId` = 'F00000008';
+UPDATE `food` SET `img` = 'image/F00000009.jpg' WHERE `foodId` = 'F00000009';
+
+
+
 
 
 
