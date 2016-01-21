@@ -27,7 +27,7 @@ namespace Login
             ViewOrder viewOrder = new ViewOrder(this);
             kitchenView kcv = new kitchenView();
             Report report = new Report(this);
-            Form[] temp = {addValue,mMenu,mUser,viewOrder,report,kcv};
+            Form[] temp = { addValue, mMenu, mUser, kcv, report};
             frm = temp;
         }
 
@@ -36,9 +36,9 @@ namespace Login
             System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
             var y = screen.WorkingArea.Width;
            
-            y = y / 6;
+            y = y / 5;
             var x = btn_AddValue.Size.Height;
-            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder, btn_Report ,btn_Kitchen};
+            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder, btn_Report};
             for (int i = 0; i < btn.Length; i++) {
                 btn[i].Size = new Size(y, x);
             }
