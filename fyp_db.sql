@@ -220,6 +220,13 @@ UPDATE `food` SET `img` = 'image/F00000009.jpg' WHERE `foodId` = 'F00000009';
 
 
 --add order
-UPDATE student SET balance=balance-(SELECT price FROM menu WHERE menuId='M00000003')-8 WHERE stuId='140476338' AND balance-8-(SELECT price FROM menu WHERE menuId='M00000003')>=0;
-INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) VALUES(CURDATE(), 'O00000002', '140476338', '11:00', ((SELECT price FROM menu WHERE menuId='M00000003')+8), 'M00000003');
-INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice) VALUES (CURDATE(), 'O00000003', 'F00000001', (SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')), (CURDATE(), 'O00000003', 'F00000005', (SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
+UPDATE student SET balance=balance-(SELECT price FROM menu WHERE menuId='M00000003')-8 
+WHERE stuId='140476338' AND balance-8-(SELECT price FROM menu WHERE menuId='M00000003')>=0;
+
+INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) VALUES
+(CURDATE(), 'O00000001', '140476338', '11:00', ((SELECT price FROM menu WHERE menuId='M00000003')+8), 'M00000003');
+
+INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice) VALUES
+(CURDATE(), 'O00000001', 'F00000001', (SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')),
+(CURDATE(), 'O00000001', 'F00000005', (SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
+----
