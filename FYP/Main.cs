@@ -25,8 +25,9 @@ namespace Login
             MaintainMenu mMenu = new MaintainMenu(this);
             MaintainUser mUser = new MaintainUser(this);
             ViewOrder viewOrder = new ViewOrder(this);
+            kitchenView kcv = new kitchenView();
             Report report = new Report(this);
-            Form[] temp = {addValue,mMenu,mUser,viewOrder,report};
+            Form[] temp = {addValue,mMenu,mUser,viewOrder,report,kcv};
             frm = temp;
         }
 
@@ -145,6 +146,11 @@ namespace Login
 
         private void showForm(int i) {
             frm[i].ShowDialog();
+        }
+
+        private void btnKitchen_Click(object sender, EventArgs e)
+        {
+            showForm(5);
         }
 
     }
