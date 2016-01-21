@@ -29,17 +29,63 @@
         private void InitializeComponent()
         {
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btn_del2 = new System.Windows.Forms.Button();
+            this.btn_del = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.FLP1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.gb1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb1
             // 
-            this.gb1.Location = new System.Drawing.Point(1168, 12);
+            this.gb1.Controls.Add(this.txtId);
+            this.gb1.Controls.Add(this.btn_del2);
+            this.gb1.Controls.Add(this.btn_del);
+            this.gb1.Controls.Add(this.btn_add);
+            this.gb1.Location = new System.Drawing.Point(1206, 12);
             this.gb1.Name = "gb1";
-            this.gb1.Size = new System.Drawing.Size(200, 100);
+            this.gb1.Size = new System.Drawing.Size(162, 451);
             this.gb1.TabIndex = 1;
             this.gb1.TabStop = false;
             this.gb1.Text = "Filter";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(28, 111);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 3;
+            // 
+            // btn_del2
+            // 
+            this.btn_del2.Location = new System.Drawing.Point(28, 81);
+            this.btn_del2.Name = "btn_del2";
+            this.btn_del2.Size = new System.Drawing.Size(75, 23);
+            this.btn_del2.TabIndex = 2;
+            this.btn_del2.Text = "del2";
+            this.btn_del2.UseVisualStyleBackColor = true;
+            this.btn_del2.Click += new System.EventHandler(this.btn_del2_Click);
+            // 
+            // btn_del
+            // 
+            this.btn_del.Location = new System.Drawing.Point(28, 52);
+            this.btn_del.Name = "btn_del";
+            this.btn_del.Size = new System.Drawing.Size(75, 23);
+            this.btn_del.TabIndex = 1;
+            this.btn_del.Text = "del";
+            this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(28, 22);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // FLP1
             // 
@@ -57,7 +103,10 @@
             this.Controls.Add(this.FLP1);
             this.Name = "kitchenView";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.kitchenView_Load);
+            this.gb1.ResumeLayout(false);
+            this.gb1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -66,5 +115,9 @@
 
         private System.Windows.Forms.GroupBox gb1;
         private System.Windows.Forms.FlowLayoutPanel FLP1;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_del;
+        private System.Windows.Forms.Button btn_del2;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
