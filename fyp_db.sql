@@ -194,26 +194,32 @@ UPDATE `food` SET `img` = 'image/F00000009.jpg' WHERE `foodId` = 'F00000009';
 
 
 --get menu--
-SELECT M.menuId,M.name,M.price,M.img,
-GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content' 
-FROM menu M, menufood MF, foodtype FT
-WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId AND M.isShow='Y'
-GROUP BY M.menuId;
+-- SELECT M.menuId,M.name,M.price,M.img,
+-- GROUP_CONCAT(CONCAT(' ',FT.name,' x ',MF.many)) 'content' 
+-- FROM menu M, menufood MF, foodtype FT
+-- WHERE M.menuId=MF.menuId AND MF.fTypeId=FT.fTypeId AND M.isShow='Y'
+-- GROUP BY M.menuId;
 
---add order--
-BEGIN;
-UPDATE food SET qty-1 WHERE foodId='F00000001';
---re--
-UPDATE food SET qty-1 WHERE foodId='F00000005';
---re--
+-- --add order--
+-- BEGIN;
+-- UPDATE food SET qty-1 WHERE foodId='F00000001';
+-- --re--
+-- UPDATE food SET qty-1 WHERE foodId='F00000005';
+-- --re--
 
-INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) 
-VALUES(CURDATE(), 'O00000001', '140476338', '11:00', 38, 'M00000003');
-INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId)
-VALUES(CURDATE(), 'O00000001', '140476338', '11:00', (SELECT price FROM menu WHERE menuId='M00000003')+8.0, 'menuId'
+-- INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) 
+-- VALUES(CURDATE(), 'O00000001', '140476338', '11:00', 38, 'M00000003');
+-- INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId)
+-- VALUES(CURDATE(), 'O00000001', '140476338', '11:00', (SELECT price FROM menu WHERE menuId='M00000003')+8.0, 'menuId'
 
-INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice)
-VALUES(CURDATE(), 'O00000001', 'F00000001',(SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')),
-(CURDATE(), 'O00000001', 'F00000005',(SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
+-- INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice)
+-- VALUES(CURDATE(), 'O00000001', 'F00000001',(SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')),
+-- (CURDATE(), 'O00000001', 'F00000005',(SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
 
-SELECT SUM(price), SUM(sprice) FROM food WHERE foodID='F00000001' OR foodId='F00000005';
+-- SELECT SUM(price), SUM(sprice) FROM food WHERE foodID='F00000001' OR foodId='F00000005';
+
+
+--add order
+UPDATE student SET balance=balance-(SELECT price FROM menu WHERE menuId='M00000003')-8 WHERE stuId='140476338' AND balance-8-(SELECT price FROM menu WHERE menuId='M00000003')>=0;
+INSERT INTO orders (orderDate, orderId, stuId, oTakeTime, totalPrice, menuId) VALUES(CURDATE(), 'O00000002', '140476338', '11:00', ((SELECT price FROM menu WHERE menuId='M00000003')+8), 'M00000003');
+INSERT INTO orderFood (orderDate, orderId, foodId, price,sprice) VALUES (CURDATE(), 'O00000003', 'F00000001', (SELECT price FROM food WHERE foodID='F00000001'),(SELECT sprice FROM food WHERE foodID='F00000001')), (CURDATE(), 'O00000003', 'F00000005', (SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
