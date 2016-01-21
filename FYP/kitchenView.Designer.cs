@@ -39,7 +39,7 @@
             this.gb1.Size = new System.Drawing.Size(200, 100);
             this.gb1.TabIndex = 1;
             this.gb1.TabStop = false;
-            this.gb1.Text = "groupBox1";
+            this.gb1.Text = "Filter";
             // 
             // FLP1
             // 

@@ -43,14 +43,14 @@
             this.time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btnKitchen = new System.Windows.Forms.Button();
+            this.btn_Kitchen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnKitchen);
+            this.panel1.Controls.Add(this.btn_Kitchen);
             this.panel1.Controls.Add(this.btn_Report);
             this.panel1.Controls.Add(this.btn_ViewOrder);
             this.panel1.Controls.Add(this.btn_Staff);
@@ -206,16 +206,16 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // btnKitchen
+            // btn_Kitchen
             // 
-            this.btnKitchen.Location = new System.Drawing.Point(798, 2);
-            this.btnKitchen.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKitchen.Name = "btnKitchen";
-            this.btnKitchen.Size = new System.Drawing.Size(110, 89);
-            this.btnKitchen.TabIndex = 10;
-            this.btnKitchen.Text = "kitchen";
-            this.btnKitchen.UseVisualStyleBackColor = true;
-            this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
+            this.btn_Kitchen.Location = new System.Drawing.Point(798, 2);
+            this.btn_Kitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Kitchen.Name = "btn_Kitchen";
+            this.btn_Kitchen.Size = new System.Drawing.Size(110, 89);
+            this.btn_Kitchen.TabIndex = 10;
+            this.btn_Kitchen.Text = "kitchen";
+            this.btn_Kitchen.UseVisualStyleBackColor = true;
+            this.btn_Kitchen.Click += new System.EventHandler(this.btnKitchen_Click);
             // 
             // Main
             // 
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Label lab_status;
         private System.Windows.Forms.Label lab_username;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button btnKitchen;
+        private System.Windows.Forms.Button btn_Kitchen;
 
     }
 }

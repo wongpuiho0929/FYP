@@ -36,9 +36,9 @@ namespace Login
             System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
             var y = screen.WorkingArea.Width;
            
-            y = y / 5;
+            y = y / 6;
             var x = btn_AddValue.Size.Height;
-            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder, btn_Report };
+            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder, btn_Report ,btn_Kitchen};
             for (int i = 0; i < btn.Length; i++) {
                 btn[i].Size = new Size(y, x);
             }

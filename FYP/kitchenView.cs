@@ -22,10 +22,12 @@ namespace Login
 
         private void kitchenView_Load(object sender, EventArgs e)
         {
-            this.Width = screenWidth;
+            System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
+            var y = screen.WorkingArea.Width;
+            /*this.Width = screenWidth;
             this.Height = screenHeight;
             this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;*/
             this.FLP1.Width = screenWidth - 200;
             this.FLP1.Height = screenHeight;
             this.gb1.Location = new Point(screenWidth - 200, 10);
