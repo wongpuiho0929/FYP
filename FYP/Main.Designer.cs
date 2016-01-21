@@ -43,28 +43,32 @@
             this.time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btn_Kitchen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_Kitchen);
             this.panel1.Controls.Add(this.btn_Report);
             this.panel1.Controls.Add(this.btn_ViewOrder);
             this.panel1.Controls.Add(this.btn_Staff);
             this.panel1.Controls.Add(this.btn_Menu);
             this.panel1.Controls.Add(this.btn_AddValue);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 410);
+            this.panel1.Location = new System.Drawing.Point(0, 328);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1213, 117);
+            this.panel1.Size = new System.Drawing.Size(910, 94);
             this.panel1.TabIndex = 0;
             // 
             // btn_Report
             // 
-            this.btn_Report.Location = new System.Drawing.Point(995, 3);
+            this.btn_Report.Location = new System.Drawing.Point(640, 3);
+            this.btn_Report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Size = new System.Drawing.Size(206, 111);
+            this.btn_Report.Size = new System.Drawing.Size(154, 89);
             this.btn_Report.TabIndex = 9;
             this.btn_Report.Text = "Report";
             this.btn_Report.UseVisualStyleBackColor = true;
@@ -72,9 +76,10 @@
             // 
             // btn_ViewOrder
             // 
-            this.btn_ViewOrder.Location = new System.Drawing.Point(730, 3);
+            this.btn_ViewOrder.Location = new System.Drawing.Point(482, 3);
+            this.btn_ViewOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_ViewOrder.Name = "btn_ViewOrder";
-            this.btn_ViewOrder.Size = new System.Drawing.Size(206, 111);
+            this.btn_ViewOrder.Size = new System.Drawing.Size(154, 89);
             this.btn_ViewOrder.TabIndex = 8;
             this.btn_ViewOrder.Text = "View Order";
             this.btn_ViewOrder.UseVisualStyleBackColor = true;
@@ -82,9 +87,10 @@
             // 
             // btn_Staff
             // 
-            this.btn_Staff.Location = new System.Drawing.Point(490, 3);
+            this.btn_Staff.Location = new System.Drawing.Point(324, 3);
+            this.btn_Staff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Staff.Name = "btn_Staff";
-            this.btn_Staff.Size = new System.Drawing.Size(206, 111);
+            this.btn_Staff.Size = new System.Drawing.Size(154, 89);
             this.btn_Staff.TabIndex = 7;
             this.btn_Staff.Text = "Staff";
             this.btn_Staff.UseVisualStyleBackColor = true;
@@ -92,9 +98,10 @@
             // 
             // btn_Menu
             // 
-            this.btn_Menu.Location = new System.Drawing.Point(250, 3);
+            this.btn_Menu.Location = new System.Drawing.Point(166, 2);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(206, 111);
+            this.btn_Menu.Size = new System.Drawing.Size(154, 89);
             this.btn_Menu.TabIndex = 6;
             this.btn_Menu.Text = "Menu";
             this.btn_Menu.UseVisualStyleBackColor = true;
@@ -102,9 +109,10 @@
             // 
             // btn_AddValue
             // 
-            this.btn_AddValue.Location = new System.Drawing.Point(10, 3);
+            this.btn_AddValue.Location = new System.Drawing.Point(8, 2);
+            this.btn_AddValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_AddValue.Name = "btn_AddValue";
-            this.btn_AddValue.Size = new System.Drawing.Size(206, 111);
+            this.btn_AddValue.Size = new System.Drawing.Size(154, 89);
             this.btn_AddValue.TabIndex = 5;
             this.btn_AddValue.Text = "Add value";
             this.btn_AddValue.UseVisualStyleBackColor = true;
@@ -112,15 +120,15 @@
             // 
             // listBox1
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(10, 55);
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(8, 44);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(838, 334);
+            this.listBox1.Size = new System.Drawing.Size(630, 268);
             this.listBox1.TabIndex = 1;
-           
             // 
             // panel2
             // 
@@ -132,17 +140,19 @@
             this.panel2.Controls.Add(this.time);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1213, 49);
+            this.panel2.Size = new System.Drawing.Size(910, 39);
             this.panel2.TabIndex = 2;
             // 
             // lab_username
             // 
             this.lab_username.AutoSize = true;
             this.lab_username.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.lab_username.Location = new System.Drawing.Point(408, 9);
+            this.lab_username.Location = new System.Drawing.Point(306, 7);
+            this.lab_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lab_username.Name = "lab_username";
-            this.lab_username.Size = new System.Drawing.Size(116, 28);
+            this.lab_username.Size = new System.Drawing.Size(90, 23);
             this.lab_username.TabIndex = 3;
             this.lab_username.Text = "UserName:";
             // 
@@ -151,9 +161,10 @@
             this.lab_status.AutoSize = true;
             this.lab_status.BackColor = System.Drawing.Color.Chartreuse;
             this.lab_status.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.lab_status.Location = new System.Drawing.Point(12, 9);
+            this.lab_status.Location = new System.Drawing.Point(9, 7);
+            this.lab_status.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lab_status.Name = "lab_status";
-            this.lab_status.Size = new System.Drawing.Size(147, 28);
+            this.lab_status.Size = new System.Drawing.Size(116, 23);
             this.lab_status.TabIndex = 2;
             this.lab_status.Text = "Out of service";
             // 
@@ -163,9 +174,10 @@
             this.Close.AutoSize = true;
             this.Close.BackColor = System.Drawing.SystemColors.Control;
             this.Close.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.Close.Location = new System.Drawing.Point(1175, 9);
+            this.Close.Location = new System.Drawing.Point(881, 7);
+            this.Close.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(26, 28);
+            this.Close.Size = new System.Drawing.Size(22, 23);
             this.Close.TabIndex = 1;
             this.Close.Text = "X";
             this.Close.Click += new System.EventHandler(this.Close_Click);
@@ -177,9 +189,10 @@
             this.time.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.time.AutoSize = true;
             this.time.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.time.Location = new System.Drawing.Point(865, 9);
+            this.time.Location = new System.Drawing.Point(649, 7);
+            this.time.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(60, 29);
+            this.time.Size = new System.Drawing.Size(46, 23);
             this.time.TabIndex = 0;
             this.time.Text = "Time";
             // 
@@ -193,16 +206,28 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // btn_Kitchen
+            // 
+            this.btn_Kitchen.Location = new System.Drawing.Point(798, 2);
+            this.btn_Kitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Kitchen.Name = "btn_Kitchen";
+            this.btn_Kitchen.Size = new System.Drawing.Size(110, 89);
+            this.btn_Kitchen.TabIndex = 10;
+            this.btn_Kitchen.Text = "kitchen";
+            this.btn_Kitchen.UseVisualStyleBackColor = true;
+            this.btn_Kitchen.Click += new System.EventHandler(this.btnKitchen_Click);
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1213, 527);
+            this.ClientSize = new System.Drawing.Size(910, 422);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -231,6 +256,7 @@
         private System.Windows.Forms.Label lab_status;
         private System.Windows.Forms.Label lab_username;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btn_Kitchen;
 
     }
 }

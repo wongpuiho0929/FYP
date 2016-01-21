@@ -33,7 +33,6 @@ namespace Login
                da.Fill(db); 
                cnn.Close();
                return db;
-              
            }
 
            public void queny(String sql)
