@@ -71,3 +71,4 @@ C:\Users\PC\Desktop\FYP-master\FYP\obj\x86\Debug\Login.Report.resources
 C:\Users\PC\Desktop\FYP-master\FYP\obj\x86\Debug\Login.SplashScreen.resources
 C:\Users\PC\Desktop\FYP-master\FYP\obj\x86\Debug\Login.ViewOrder.resources
 C:\Users\PC\Desktop\FYP-master\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.MaintainMenuFood.resources

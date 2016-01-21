@@ -59,5 +59,31 @@ namespace Login
                cnn.Close();
             
            }
+
+           public DataTable query(String sql)
+           {
+
+               MySqlCommand command = cnn.CreateCommand();
+               cnn.Open();
+               MySqlCommand s = new MySqlCommand("set names utf8", cnn);
+               s.ExecuteNonQuery();
+               s.Dispose();
+               String cmdText = sql;
+               MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
+               MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
+               cnn.Close();
+               DataTable db = new DataTable();
+               try
+               {
+                   da.Fill(db);
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("SELECTED 0 record!");
+               }
+               cnn.Close();
+               return db;
+
+           }
     }
 }

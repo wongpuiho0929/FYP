@@ -13,8 +13,7 @@ namespace Login
     {
         private Login login;
         public Database db;
-      
-       
+        private int numOfOrder = 0;
         private Form[] frm ;
 
         public Main(Login login)
@@ -44,11 +43,11 @@ namespace Login
             }
             for (int i = 1; i < btn.Length; i++)
             {
-                listBox1.Items.Add(btn[i - 1].Location.X);
                 x = btn[i-1].Location.X + btn[i].Size.Width;
                 btn[i].Location = new Point(x,3);
             }
             timer1.Start();
+            timer2.Start();
             lab_username.Text+=login.userName;
             
         }
@@ -58,6 +57,39 @@ namespace Login
            
             this.time.Text = DateTime.Now.ToString();
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            DataTable db_orders = db.getDb("orders");
+
+            for (int i = numOfOrder; i < db_orders.Rows.Count; i++)
+            {
+                String s = db_orders.Rows[i]["stuid"].ToString();
+                s += ": order ";
+                String oid = db_orders.Rows[i]["orderId"].ToString();
+                DataTable db_orderFood = db.getDb("orderfood where orderid = '"+oid+"'");
+                if (db_orderFood.Rows.Count > 1)
+                {
+                    for (int k = 0; k < db_orderFood.Rows.Count; k++)
+                    {
+                        String fid = db_orderFood.Rows[k]["foodId"].ToString();
+                        DataTable db_food = db.getDb("food where foodid='" + fid + "'");
+                        s += db_food.Rows[0]["name"];
+                    }
+                }
+                else {
+                    String fid = db_orderFood.Rows[0]["foodId"].ToString();
+                    DataTable db_food = db.getDb("food where foodid='" + fid + "'");
+                    s += db_food.Rows[0]["name"];
+                }
+                listBox1.Items.Add(s);
+                numOfOrder++;
+            }
+        }
+
+
+
+
 
         //--------------------------Close Action ----------------------------//
         private void Close_Click(object sender, EventArgs e)
@@ -115,6 +147,5 @@ namespace Login
             frm[i].ShowDialog();
         }
 
-       
     }
 }

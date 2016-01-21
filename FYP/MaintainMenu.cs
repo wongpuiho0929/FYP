@@ -57,8 +57,6 @@ namespace Login
             for (int i = 0; i < dt_menuCategory.Rows.Count; i++) {
                 combo_MenuCategory.Items.Add(dt_menuCategory.Rows[i]["name"].ToString());
             }
-            
-
         }
         private void checkBoxA_Click(object sender, EventArgs e)
         {
@@ -330,6 +328,8 @@ namespace Login
             MenuEnable(false);
             combo_MenuName.Enabled = true;
             btn_MSave.Visible = false;
+            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MF.ShowDialog();
         }
 
         private void btn_MAddSave_Click(object sender, EventArgs e)
@@ -340,6 +340,8 @@ namespace Login
             MenuEnable(false);
             combo_MenuName.Enabled = true;
             btn_MAddSave.Visible = false;
+            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MF.ShowDialog();
         }
 
         private void MAddSave() {
@@ -404,9 +406,7 @@ namespace Login
             MC.ShowDialog();
         }
 
-    
-       
-
-        
+     
+ 
     }
 }

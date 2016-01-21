@@ -42,6 +42,7 @@
             this.Close = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +120,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(838, 334);
             this.listBox1.TabIndex = 1;
+           
             // 
             // panel2
             // 
@@ -186,6 +188,11 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -223,6 +230,7 @@
         private System.Windows.Forms.Label Close;
         private System.Windows.Forms.Label lab_status;
         private System.Windows.Forms.Label lab_username;
+        private System.Windows.Forms.Timer timer2;
 
     }
 }
