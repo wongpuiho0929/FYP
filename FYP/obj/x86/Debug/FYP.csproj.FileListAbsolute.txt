@@ -92,3 +92,4 @@ C:\Users\chanyan\Desktop\fyp\puiho\FYP\FYP\obj\x86\Debug\Login.Report.resources
 C:\Users\chanyan\Desktop\fyp\puiho\FYP\FYP\obj\x86\Debug\Login.SplashScreen.resources
 C:\Users\chanyan\Desktop\fyp\puiho\FYP\FYP\obj\x86\Debug\Login.ViewOrder.resources
 C:\Users\chanyan\Desktop\fyp\puiho\FYP\FYP\obj\x86\Debug\FYP.csproj.GenerateResource.Cache
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\Login.kitchenView.resources

@@ -34,6 +34,7 @@ namespace Login
             txt_studID.Enabled = true;
             dt_Student = db.getDb("Student");
             this.ActiveControl = txt_studID;
+            ListBox_History.Items.Clear();
         }
 
        
@@ -48,7 +49,11 @@ namespace Login
                     lab_Info.Text += "\nStudent Balance : \n" + dt_Student.Rows[i]["balance"];
                     txt_studID.Enabled = false;
                     balance = Convert.ToDouble(dt_Student.Rows[i]["balance"].ToString());
-                    
+                    DataTable db_History = db.getDb("stuhistory where stuid ='"+txt_studID.Text+"'");
+                    for (int k = 0; k < db_History.Rows.Count; k++) {
+                        String s = db_History.Rows[k][0].ToString() +"\t\t"+ db_History.Rows[k][2].ToString() +"\t\t" +db_History.Rows[k][3].ToString();
+                        ListBox_History.Items.Add(s);
+                    }  
                }
             } 
         }
@@ -76,6 +81,7 @@ namespace Login
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            double temp = total;
             total += balance;
             if (total > 998)
             {
@@ -95,9 +101,11 @@ namespace Login
                 lab_Info.Text = "Student Name : \n" + changeData.Rows[0]["name"];
                 lab_Info.Text += "\nStudent Balance : \n" + changeData.Rows[0]["balance"];
                 balance = Convert.ToDouble(changeData.Rows[0]["balance"].ToString());
+                s = "INSERT INTO stuHistory(datetime, stuId, action, balance) VALUES( NOW(),'" + txt_studID.Text + "', 'Add Value'," + temp + ");";
+                db.queny(s);
+               
             }
         }
-
         //----------------------- End Add function---------------------------------//
     }
 }

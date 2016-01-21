@@ -36,6 +36,7 @@
             this.btn_MAdd = new System.Windows.Forms.Button();
             this.combo_MenuName = new System.Windows.Forms.ComboBox();
             this.lab_searchM = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_MAddSave = new System.Windows.Forms.Button();
             this.chk_Null = new System.Windows.Forms.CheckBox();
@@ -83,7 +84,6 @@
             this.DGW_show = new System.Windows.Forms.DataGridView();
             this.lab_FoodName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.tab_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -227,6 +227,16 @@
             this.lab_searchM.Size = new System.Drawing.Size(152, 30);
             this.lab_searchM.TabIndex = 0;
             this.lab_searchM.Text = "Search Menu:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(792, 502);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Cancel
             // 
@@ -804,16 +814,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1183, 734);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(792, 502);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MaintainMenu
             // 

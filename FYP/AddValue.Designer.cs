@@ -39,6 +39,7 @@
             this.lab_total = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.ListBox_History = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -167,14 +168,25 @@
             this.ListBox_History.ItemHeight = 15;
             this.ListBox_History.Location = new System.Drawing.Point(249, 12);
             this.ListBox_History.Name = "ListBox_History";
-            this.ListBox_History.Size = new System.Drawing.Size(515, 289);
+            this.ListBox_History.Size = new System.Drawing.Size(515, 349);
             this.ListBox_History.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(541, 404);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            
             // 
             // AddValue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 509);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ListBox_History);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.Label lab_total;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.ListBox ListBox_History;
+        private System.Windows.Forms.Button button1;
     }
 }

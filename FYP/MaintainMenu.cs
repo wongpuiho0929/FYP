@@ -328,7 +328,7 @@ namespace Login
             MenuEnable(false);
             combo_MenuName.Enabled = true;
             btn_MSave.Visible = false;
-            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MaintainMenuFood MF = new MaintainMenuFood(this, txt_MenuID.Text);
             MF.ShowDialog();
         }
 
@@ -340,7 +340,7 @@ namespace Login
             MenuEnable(false);
             combo_MenuName.Enabled = true;
             btn_MAddSave.Visible = false;
-            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MaintainMenuFood MF = new MaintainMenuFood(this, txt_MenuID.Text);
             MF.ShowDialog();
         }
 
@@ -408,7 +408,7 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MaintainMenuFood MF = new MaintainMenuFood(this);
+            MaintainMenuFood MF = new MaintainMenuFood(this, txt_MenuID.Text);
             MF.ShowDialog();
         }
 
