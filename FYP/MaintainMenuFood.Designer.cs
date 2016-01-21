@@ -30,7 +30,9 @@
         {
             this.chkedListBox_FoodType = new System.Windows.Forms.CheckedListBox();
             this.lab_FType = new System.Windows.Forms.Label();
-            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_NEXT = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lab_NumberOfIem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkedListBox_FoodType
@@ -42,7 +44,7 @@
             this.chkedListBox_FoodType.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.chkedListBox_FoodType.MultiColumn = true;
             this.chkedListBox_FoodType.Name = "chkedListBox_FoodType";
-            this.chkedListBox_FoodType.Size = new System.Drawing.Size(1536, 968);
+            this.chkedListBox_FoodType.Size = new System.Drawing.Size(794, 735);
             this.chkedListBox_FoodType.TabIndex = 41;
             // 
             // lab_FType
@@ -56,25 +58,46 @@
             this.lab_FType.TabIndex = 40;
             this.lab_FType.Text = "Set Food Type:";
             // 
-            // btn_Save
+            // btn_NEXT
             // 
-            this.btn_Save.BackColor = System.Drawing.Color.Azure;
-            this.btn_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Location = new System.Drawing.Point(0, 955);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(1536, 43);
-            this.btn_Save.TabIndex = 42;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_NEXT.BackColor = System.Drawing.Color.Azure;
+            this.btn_NEXT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NEXT.Location = new System.Drawing.Point(0, 696);
+            this.btn_NEXT.Name = "btn_NEXT";
+            this.btn_NEXT.Size = new System.Drawing.Size(794, 69);
+            this.btn_NEXT.TabIndex = 42;
+            this.btn_NEXT.Text = "NEXT";
+            this.btn_NEXT.UseVisualStyleBackColor = false;
+            this.btn_NEXT.Click += new System.EventHandler(this.btn_NEXT_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 668);
+            this.flowLayoutPanel1.TabIndex = 43;
+            this.flowLayoutPanel1.Visible = false;
+            // 
+            // lab_NumberOfIem
+            // 
+            this.lab_NumberOfIem.AutoSize = true;
+            this.lab_NumberOfIem.Location = new System.Drawing.Point(0, 0);
+            this.lab_NumberOfIem.Name = "lab_NumberOfIem";
+            this.lab_NumberOfIem.Size = new System.Drawing.Size(195, 30);
+            this.lab_NumberOfIem.TabIndex = 44;
+            this.lab_NumberOfIem.Text = "Number Of Item:";
+            this.lab_NumberOfIem.Visible = false;
             // 
             // MaintainMenuFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1536, 998);
-            this.Controls.Add(this.btn_Save);
+            this.ClientSize = new System.Drawing.Size(794, 765);
+            this.Controls.Add(this.lab_NumberOfIem);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.btn_NEXT);
             this.Controls.Add(this.chkedListBox_FoodType);
             this.Controls.Add(this.lab_FType);
             this.Font = new System.Drawing.Font("Comic Sans MS", 13F);
@@ -93,6 +116,8 @@
 
         private System.Windows.Forms.CheckedListBox chkedListBox_FoodType;
         private System.Windows.Forms.Label lab_FType;
-        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_NEXT;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lab_NumberOfIem;
     }
 }
