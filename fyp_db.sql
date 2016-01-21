@@ -49,6 +49,7 @@ CREATE TABLE `orders`(
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
 	`name` varchar(70) NOT NULL,
+	`shortName` varchar(50) NOT NULL,
 	`price` numeric(5,1) NOT NULL,
 	`sPrice` numeric(5,1) NOT NULL,
 	`img` varchar(50) NULL,
@@ -133,16 +134,16 @@ INSERT INTO `foodType`(`fTypeId`, `name`) VALUES
 ('FT00000003', 'Batching'),
 ('FT00000004', 'siu mei Batching')
 ;
-INSERT INTO `food` (`foodId`, `name`, `price`, `sPrice`, `qty`, `dQty`, `fTypeId`) VALUES
-('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', 30, 0, 100, 100, 'FT00000001'),
-('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', 30, 0, 100, 100, 'FT00000001'),
-('F00000003', '即磨咖啡(ground coffee)', 12, 0, 100, 100, 'FT00000002'),
-('F00000004', '凍檸茶(Ice lemon tea)', 15, 3, 100, 100, 'FT00000002'),
-('F00000005', '紅豆冰(Red bean ice)', 18, 8, 100, 100, 'FT00000002'),
-('F00000006', '叉燒(Barbecue pork)', 30, 0, 100, 100, 'FT00000004'),
-('F00000007', '燒鴨(Roast duck)', 30, 0, 100, 100, 'FT00000004'),
-('F00000008', '燒肉(Roasted pork)', 30, 0, 100, 100, 'FT00000004'),
-('F00000009', '切雞(Cut chicken)', 30, 0, 100, 100, 'FT00000004')
+INSERT INTO `food` (`foodId`, `name`, `shortName`, `price`, `sPrice`, `qty`, `dQty`, `fTypeId`) VALUES
+('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', '咖喱牛腩飯', 30, 0, 100, 100, 'FT00000001'),
+('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', '咖喱雞飯', 30, 0, 100, 100, 'FT00000001'),
+('F00000003', '即磨咖啡(ground coffee)', '啡', 12, 0, 100, 100, 'FT00000002'),
+('F00000004', '凍檸茶(Ice lemon tea)', 'ILT', 15, 3, 100, 100, 'FT00000002'),
+('F00000005', '紅豆冰(Red bean ice)', '紅豆冰', 18, 8, 100, 100, 'FT00000002'),
+('F00000006', '叉燒(Barbecue pork)', '叉', 30, 0, 100, 100, 'FT00000004'),
+('F00000007', '燒鴨(Roast duck)', '鴨', 30, 0, 100, 100, 'FT00000004'),
+('F00000008', '燒肉(Roasted pork)', '燒肉', 30, 0, 100, 100, 'FT00000004'),
+('F00000009', '切雞(Cut chicken)', '雞', 30, 0, 100, 100, 'FT00000004')
 ;
 INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
 ('MC00000001', '正價(Regular price)'),
