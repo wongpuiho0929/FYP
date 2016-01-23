@@ -12,10 +12,10 @@ namespace Login
     public partial class kitchenView : Form
     {
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-        private Database database;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-        private DataTable Odbt;
-        private int btnV=0;
+        private Database database;
+        private DataTable Orderdt, Menudt, OrderFooddt, Fooddt;
+
         public kitchenView()
         {
             InitializeComponent();
@@ -23,7 +23,6 @@ namespace Login
 
         private void kitchenView_Load(object sender, EventArgs e)
         {
-            System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
             this.Width = screenWidth;
             this.Height = screenHeight;
             this.WindowState = FormWindowState.Maximized;
@@ -35,20 +34,12 @@ namespace Login
             this.gb1.Height = screenHeight;
             database = new Database();
             database.Connection();
-            Odbt = database.getDb("orders");
+            reFreshOrder();
         }
-
+        
         private void btn_add_Click(object sender, EventArgs e)
         {
-            ListBox lb = new ListBox();
-            lb.Font = new System.Drawing.Font("Arial", 30, System.Drawing.FontStyle.Italic);
-            lb.ForeColor = Color.Black;
-            lb.Height = screenHeight / 4;
-            lb.Width = (screenWidth - 250) / 5;
-            lb.Items.Add("id:001");
-            lb.Items.Add("food:叉燒");
-            lb.Enabled = false;
-            FLP1.Controls.Add(lb);
+            orderView();
         }
 
         private void btn_del_Click(object sender, EventArgs e)
@@ -62,7 +53,34 @@ namespace Login
                 FLP1.Controls.RemoveByKey(txtId.Text);
         }
 
-        
-
+        private void orderView()
+        {
+            for (int i = 0; i < Orderdt.Rows.Count; i+=2)
+            {
+                ListBox lb = new ListBox();
+                lb.Font = new System.Drawing.Font("Arial", 15, System.Drawing.FontStyle.Italic);
+                lb.ForeColor = Color.Black;
+                lb.Height = screenHeight / 4;
+                lb.Width = (screenWidth - 250) / 4;
+                lb.HorizontalScrollbar = true;
+                //lb.Enabled = false;
+            
+                lb.Items.Add("ID:" + Orderdt.Rows[i]["orderId"]);
+                getFoodDb(Orderdt.Rows[0]["foodId"].ToString());
+                lb.Items.Add("Food:" + Fooddt.Rows[0]["name"]);
+                getFoodDb(Orderdt.Rows[1]["foodId"].ToString());
+                lb.Items.Add("Drink:" + Fooddt.Rows[0]["name"]);
+                FLP1.Controls.Add(lb);
+            }
+        }
+        private void reFreshOrder()
+        {
+            Orderdt = database.getDb("orders", "orderfood","orderId","orderId");
+            Menudt = database.getDb("menu");
+        }
+        private void getFoodDb(String foodId)
+        {
+            Fooddt = database.getDb("food","foodId",foodId);
+        }
     }
 }

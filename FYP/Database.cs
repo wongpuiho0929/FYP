@@ -14,7 +14,7 @@ namespace Login
         private String server = "127.0.0.1";
         private String database = "fyp_db";
         private String uid="root";
-        private String password="tommy985";
+        private String password="";
         //connetionString = "Server=" + server + ";Database=" + database + ";";
            public void Connection()
             {
@@ -31,6 +31,30 @@ namespace Login
                MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
                DataTable db = new DataTable();
                da.Fill(db); 
+               cnn.Close();
+               return db;
+           }
+           public DataTable getDb(String dbName, String columnName, String columunResult)
+           {
+               MySqlCommand command = cnn.CreateCommand();
+               cnn.Open();
+               String cmdText = "SELECT * FROM " + dbName+" WHERE "+columnName +"='"+columunResult+"'";
+               MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
+               MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
+               DataTable db = new DataTable();
+               da.Fill(db);
+               cnn.Close();
+               return db;
+           }
+           public DataTable getDb(String dbName,String dbName2,String columnName,String columnName2)
+           {
+               MySqlCommand command = cnn.CreateCommand();
+               cnn.Open();
+               String cmdText = "SELECT * FROM "+dbName+" Left join "+dbName2+" on "+ dbName+"."+columnName+"="+dbName2+"."+columnName2;
+               MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
+               MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
+               DataTable db = new DataTable();
+               da.Fill(db);
                cnn.Close();
                return db;
            }

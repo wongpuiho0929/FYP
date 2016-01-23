@@ -101,6 +101,7 @@
             this.ClientSize = new System.Drawing.Size(1395, 618);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.FLP1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "kitchenView";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
