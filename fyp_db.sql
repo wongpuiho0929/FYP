@@ -71,6 +71,7 @@ CREATE TABLE `orderFood`(
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
 	`name` varchar(70) NOT NULL,
+	`shortName` varchar(50) NOT NULL,
 	`price` numeric(5,1) NULL,
 	`img` varchar(50) NULL,
 	`mCateId` varchar(10) NOT NULL,
@@ -153,12 +154,12 @@ INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
 ('MC00000002', '飯類(Rice Category)'),
 ('MC00000003', '燒味(siu mei)')
 ;
-INSERT INTO `Menu` (`menuId`, `name`, `price`, `mCateId`) VALUES
-('M00000001', '飯類(Rice Category)', null, 'MC00000001'),
-('M00000002', '飲品(Drink Category)', null, 'MC00000001'),
-('M00000003', '套餐(Set rice)', 30, 'MC00000002'),
-('M00000004', '雙餸燒味飯(siu mei rice with two choices of sides)', 25, 'MC00000003'),
-('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', 30, 'MC00000003')
+INSERT INTO `Menu` (`menuId`, `name`, `shortName`, `price`, `mCateId`) VALUES
+('M00000001', '飯類(Rice Category)', '反', null, 'MC00000001'),
+('M00000002', '飲品(Drink Category)', '飲', null, 'MC00000001'),
+('M00000003', '套餐(Set rice)', '套餐', 30, 'MC00000002'),
+('M00000004', '雙餸燒味飯(siu mei rice with two choices of sides)', '雙燒味飯', 25, 'MC00000003'),
+('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', '雙燒味飯(餐)', 30, 'MC00000003')
 ;
 INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
 ('M00000001', 'FT00000001', 1),
