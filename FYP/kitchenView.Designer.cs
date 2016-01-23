@@ -56,6 +56,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 3;
+            this.txtId.Visible = false;
             // 
             // btn_del2
             // 
@@ -65,6 +66,7 @@
             this.btn_del2.TabIndex = 2;
             this.btn_del2.Text = "del2";
             this.btn_del2.UseVisualStyleBackColor = true;
+            this.btn_del2.Visible = false;
             this.btn_del2.Click += new System.EventHandler(this.btn_del2_Click);
             // 
             // btn_del
@@ -75,6 +77,7 @@
             this.btn_del.TabIndex = 1;
             this.btn_del.Text = "del";
             this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Visible = false;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
             // btn_add
@@ -83,12 +86,13 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "add";
+            this.btn_add.Text = "Update";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // FLP1
             // 
+            this.FLP1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.FLP1.Location = new System.Drawing.Point(12, 12);
             this.FLP1.Name = "FLP1";
             this.FLP1.Size = new System.Drawing.Size(735, 451);

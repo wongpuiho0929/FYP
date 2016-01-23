@@ -35,6 +35,7 @@ namespace Login
             database = new Database();
             database.Connection();
             reFreshOrder();
+            orderView();
         }
         
         private void btn_add_Click(object sender, EventArgs e)
@@ -55,21 +56,29 @@ namespace Login
 
         private void orderView()
         {
+            while (FLP1.Controls.Count> 0)
+            {
+                FLP1.Controls.RemoveAt(0);
+            }
             for (int i = 0; i < Orderdt.Rows.Count; i+=2)
             {
                 ListBox lb = new ListBox();
-                lb.Font = new System.Drawing.Font("Arial", 15, System.Drawing.FontStyle.Italic);
+                lb.Name = "c"+i;
+                lb.Font = new System.Drawing.Font("Microsoft JhengHei", 30, System.Drawing.FontStyle.Bold);
                 lb.ForeColor = Color.Black;
                 lb.Height = screenHeight / 4;
                 lb.Width = (screenWidth - 250) / 4;
                 lb.HorizontalScrollbar = true;
                 //lb.Enabled = false;
-            
+
+                reFreshOrder();
                 lb.Items.Add("ID:" + Orderdt.Rows[i]["orderId"]);
                 getFoodDb(Orderdt.Rows[0]["foodId"].ToString());
-                lb.Items.Add("Food:" + Fooddt.Rows[0]["name"]);
+                lb.Items.Add("Food:" + Fooddt.Rows[0]["shortName"]);
                 getFoodDb(Orderdt.Rows[1]["foodId"].ToString());
-                lb.Items.Add("Drink:" + Fooddt.Rows[0]["name"]);
+                lb.Items.Add("Drink:" + Fooddt.Rows[0]["shortName"]);
+                lb.Items.Add("Take Out Time:");
+                lb.Items.Add(Orderdt.Rows[0]["oTakeTime"].ToString());
                 FLP1.Controls.Add(lb);
             }
         }
@@ -82,5 +91,7 @@ namespace Login
         {
             Fooddt = database.getDb("food","foodId",foodId);
         }
+
+        
     }
 }
