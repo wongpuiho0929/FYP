@@ -33,8 +33,7 @@ CREATE TABLE `stuHistory`(
 	`datetime` datetime NOT NULL,
 	`stuId` varchar(10) NOT NULL,
 	`action` varchar(10) NOT NULL,
-	`balance` integer NOT NULL,
-	PRIMARY KEY (`datetime`, `stuId`)
+	`balance` integer NOT NULL
 ) CHARACTER SET = utf8;
 CREATE TABLE `orders`(
 	`orderDate` date NOT NULL,
@@ -65,8 +64,7 @@ CREATE TABLE `orderFood`(
 	`orderId` varchar(10) NOT NULL,
 	`foodId` varchar(10) NOT NULL,
 	`price` numeric(5,1) NOT NULL,
-	`sprice` numeric(5,1) NOT NULL,
-	PRIMARY KEY (`orderDate`, `orderId`, `foodId`)
+	`sprice` numeric(5,1) NOT NULL
 ) CHARACTER SET = utf8;
 CREATE TABLE `menu`(
 	`menuId` varchar(10) NOT NULL,
@@ -81,8 +79,7 @@ CREATE TABLE `menu`(
 CREATE TABLE `menuFood`(
 	`menuId` varchar(10) NOT NULL,
 	`fTypeId` varchar(10) NOT NULL,
-	`many` integer NOT NULL DEFAULT 1,
-	PRIMARY KEY (`menuId`, `fTypeId`)
+	`many` integer NOT NULL DEFAULT 1
 ) CHARACTER SET = utf8;
 CREATE TABLE `menuCategory`(
 	`mCateId` varchar(10) NOT NULL,
