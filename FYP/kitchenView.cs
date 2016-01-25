@@ -13,9 +13,7 @@ namespace Login
     {
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-        private Database database;
-        private DataTable Orderdt, Menudt, OrderFooddt, Fooddt;
-
+        private orderView ov;
         public kitchenView()
         {
             InitializeComponent();
@@ -32,9 +30,7 @@ namespace Login
             this.gb1.Location = new Point(screenWidth - 200, 10);
             this.gb1.Width = 400;
             this.gb1.Height = screenHeight;
-            database = new Database();
-            database.Connection();
-            reFreshOrder();
+            ov = new orderView();
             orderView();
         }
         
@@ -56,11 +52,16 @@ namespace Login
 
         private void orderView()
         {
+
             while (FLP1.Controls.Count> 0)
             {
                 FLP1.Controls.RemoveAt(0);
             }
-            for (int i = 0; i < Orderdt.Rows.Count; i+=2)
+           
+            ov.setAllDt();
+            DataTable AllDt = ov.getAllDt();
+
+            for (int i = 0; i < AllDt.Rows.Count; i ++)
             {
                 ListBox lb = new ListBox();
                 lb.Name = "c"+i;
@@ -71,26 +72,20 @@ namespace Login
                 lb.HorizontalScrollbar = true;
                 //lb.Enabled = false;
 
-                reFreshOrder();
-                lb.Items.Add("ID:" + Orderdt.Rows[i]["orderId"]);
-                getFoodDb(Orderdt.Rows[0]["foodId"].ToString());
-                lb.Items.Add("Food:" + Fooddt.Rows[0]["shortName"]);
-                getFoodDb(Orderdt.Rows[1]["foodId"].ToString());
-                lb.Items.Add("Drink:" + Fooddt.Rows[0]["shortName"]);
+                lb.Items.Add("ID:" + AllDt.Rows[i]["orderId"]);
+                if (Convert.ToInt32(AllDt.Rows[0]["many"]) == 1)
+                {
+                    lb.Items.Add("Food:" + AllDt.Rows[0][22]);
+                }
+                else
+                {
+                    lb.Items.Add("Food:" + AllDt.Rows[0][10]);
+                }
+                lb.Items.Add("Drink:" + AllDt.Rows[1][22]);
                 lb.Items.Add("Take Out Time:");
-                lb.Items.Add(Orderdt.Rows[0]["oTakeTime"].ToString());
+                lb.Items.Add(AllDt.Rows[0]["oTakeTime"].ToString());
                 FLP1.Controls.Add(lb);
             }
         }
-        private void reFreshOrder()
-        {
-            Orderdt = database.getDb("orders", "orderfood","orderId","orderId");
-            Menudt = database.getDb("menu");
-        }
-        private void getFoodDb(String foodId)
-        {
-            Fooddt = database.getDb("food","foodId",foodId);
-        }
-       
     }
 }

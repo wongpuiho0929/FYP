@@ -71,6 +71,7 @@
     <Compile Include="AddValue.Designer.cs">
       <DependentUpon>AddValue.cs</DependentUpon>
     </Compile>
+    <Compile Include="orderView.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="FoodType.cs">
       <SubType>Form</SubType>
