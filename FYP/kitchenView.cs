@@ -91,7 +91,6 @@ namespace Login
         {
             Fooddt = database.getDb("food","foodId",foodId);
         }
-
-        
+       
     }
 }
