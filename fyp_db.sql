@@ -148,7 +148,7 @@ INSERT INTO `food` (`foodId`, `name`, `shortName`, `price`, `sPrice`, `qty`, `dQ
 ;
 INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
 ('MC00000001', '正價(Regular price)'),
-('MC00000002', '飯類(Rice Category)'),
+('MC00000002', '飯類套餐(Rice set of Category)'),
 ('MC00000003', '燒味(siu mei)')
 ;
 INSERT INTO `Menu` (`menuId`, `name`, `shortName`, `price`, `mCateId`) VALUES
@@ -159,8 +159,8 @@ INSERT INTO `Menu` (`menuId`, `name`, `shortName`, `price`, `mCateId`) VALUES
 ('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', '雙燒味飯(餐)', 30, 'MC00000003')
 ;
 INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
-('M00000001', 'FT00000001', 1),
-('M00000002', 'FT00000002', 1),
+('M00000001', 'FT00000002', 1),
+('M00000002', 'FT00000001', 1),
 ('M00000003', 'FT00000001', 1),
 ('M00000003', 'FT00000002', 1),
 ('M00000004', 'FT00000004', 2),
