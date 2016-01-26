@@ -57,11 +57,11 @@ namespace Login
                cnn.Close();
                return db;
            }
-           public DataTable getDb()
+           public DataTable getDb2()
            {
                MySqlCommand command = cnn.CreateCommand();
                cnn.Open();
-               String cmdText = "SELECT DISTINCT * FROM orders o INNER JOIN menu m ON o.menuId = m.menuId INNER JOIN orderfood of ON o.orderId = of.orderId AND of.orderId = o.orderId INNER JOIN food f ON f.foodId = of.foodId INNER JOIN foodtype ft ON ft.fTypeId = f.fTypeId INNER JOIN menufood mf ON mf.menuId= m.menuid WHERE of.orderDate = CURDATE() AND o.orderDate= CURDATE()  GROUP BY ft.name DESC";
+               String cmdText = "SELECT * FROM orders o where O.orderDate=CURDATE() AND o.status = 'processing'";
                MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
                MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
                DataTable db = new DataTable();
@@ -69,6 +69,19 @@ namespace Login
                cnn.Close();
                return db;
            }
+           public DataTable getDb2(String oid)
+           {
+               MySqlCommand command = cnn.CreateCommand();
+               cnn.Open();
+               String cmdText = "SELECT o.orderId,o.oTakeTime,o.orderDate,f.shortName,ft.name,m.shortName FROM orders O, orderfood OF, food F, foodtype FT, menu M WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.menuId=M.menuId AND O.orderId='"+oid+"' AND O.orderDate=CURDATE()";
+               MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
+               MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
+               DataTable db = new DataTable();
+               da.Fill(db);
+               cnn.Close();
+               return db;
+           }
+
 
            public void queny(String sql)
            {

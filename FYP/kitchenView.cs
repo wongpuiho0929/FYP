@@ -14,6 +14,7 @@ namespace Login
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
         private orderView ov;
+        private ListBox lb;
         public kitchenView()
         {
             InitializeComponent();
@@ -60,32 +61,26 @@ namespace Login
            
             ov.setAllDt();
             DataTable AllDt = ov.getAllDt();
-
             for (int i = 0; i < AllDt.Rows.Count; i ++)
             {
-                ListBox lb = new ListBox();
-                lb.Name = "c"+i;
+                lb = new ListBox();
+                lb.Name = AllDt.Rows[i]["orderid"].ToString();
                 lb.Font = new System.Drawing.Font("Microsoft JhengHei", 30, System.Drawing.FontStyle.Bold);
                 lb.ForeColor = Color.Black;
-                lb.Height = screenHeight / 4;
-                lb.Width = (screenWidth - 250) / 4;
+                lb.Height = screenHeight / 3;
+                lb.Width = (screenWidth - 250) / 3;
                 lb.HorizontalScrollbar = true;
-                //lb.Enabled = false;
-
-                lb.Items.Add("ID:" + AllDt.Rows[i]["orderId"]);
-                if (Convert.ToInt32(AllDt.Rows[0]["many"]) == 1)
+                ov.setAllDt(lb.Name.ToString());
+                DataTable orderDetail = ov.getAllDt();
+                lb.Items.Add("Order ID:" + lb.Name.ToString());
+                for (int j = 0; j < orderDetail.Rows.Count; j++)
                 {
-                    lb.Items.Add("Food:" + AllDt.Rows[0][22]);
+                    lb.Items.Add(orderDetail.Rows[j]["shortname"]);
                 }
-                else
-                {
-                    lb.Items.Add("Food:" + AllDt.Rows[0][10]);
-                }
-                lb.Items.Add("Drink:" + AllDt.Rows[1][22]);
-                lb.Items.Add("Take Out Time:");
-                lb.Items.Add(AllDt.Rows[0]["oTakeTime"].ToString());
-                FLP1.Controls.Add(lb);
+                lb.Items.Add(AllDt.Rows[i]["otaketime"]);
+                    FLP1.Controls.Add(lb);
             }
         }
+        
     }
 }

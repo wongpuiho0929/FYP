@@ -9,7 +9,7 @@ namespace Login
 {
     public class orderView
     {
-        private DataTable OrderAndOrderFoodDt, MenuAndOrderDt,AllDt;
+        private DataTable OrderAndOrderFoodDt, MenuAndOrderDt,AllDt,AllDt2;
         private Database database;
         public orderView()
         {
@@ -19,7 +19,6 @@ namespace Login
         public void UpdateOrderAndOrderFoodDt()
         {
             OrderAndOrderFoodDt = database.getDb("orders", "orderfood", "orderId", "orderId");
-
         }
         public DataTable getOrderAndOrderFooddt()
         {
@@ -33,12 +32,18 @@ namespace Login
         {
             return OrderAndOrderFoodDt;
         }
-        public void setAllDt(){
-            AllDt = database.getDb();
+        public void setAllDt()
+        {
+            AllDt = database.getDb2();
         }
         public DataTable getAllDt()
         {
             return AllDt;
         }
+        public void setAllDt(String oid)
+        {
+            AllDt = database.getDb2(oid);
+        }
+        
     }
 }
