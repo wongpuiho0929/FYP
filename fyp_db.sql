@@ -230,4 +230,4 @@ UPDATE `food` SET `img` = 'image/F00000009.jpg' WHERE `foodId` = 'F00000009';
 -- (CURDATE(), 'O00000001', 'F00000005', (SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
 -- ----
 
-SELECT * FROM orders O, orderfood OF, food F, foodtype FT, menu M WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.menuId=M.menuId AND O.orderId='O00000001'
+SELECT * FROM orders O, orderfood OF, food F, foodtype FT, menu M WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.menuId=M.menuId AND O.orderId='O00000001' AND O.orderDate=CURDATE();
