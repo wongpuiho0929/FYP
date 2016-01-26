@@ -152,8 +152,8 @@ INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
 ('MC00000003', '燒味(siu mei)')
 ;
 INSERT INTO `Menu` (`menuId`, `name`, `shortName`, `price`, `mCateId`) VALUES
-('M00000001', '飯類(Rice Category)', '反', null, 'MC00000001'),
-('M00000002', '飲品(Drink Category)', '飲', null, 'MC00000001'),
+('M00000001', '飲品(Drink Category)', '飲', null, 'MC00000001'),
+('M00000002', '飯類(Rice Category)', '反', null, 'MC00000001'),
 ('M00000003', '套餐(Set rice)', '套餐', 30, 'MC00000002'),
 ('M00000004', '雙餸燒味飯(siu mei rice with two choices of sides)', '雙燒味飯', 25, 'MC00000003'),
 ('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', '雙燒味飯(餐)', 30, 'MC00000003')
