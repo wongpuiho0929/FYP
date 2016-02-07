@@ -27,6 +27,7 @@ CREATE TABLE `student`(
 	`balance` numeric(5,1) NOT NULL DEFAULT 0,
 	`email` varchar(30) NOT NULL,
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
+	`verifyKey` varchar(20) NOT NULL,
 	PRIMARY KEY (`stuId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `stuHistory`(
@@ -117,13 +118,13 @@ ADD CONSTRAINT `mCate_fk1` FOREIGN KEY(`mCateId`) REFERENCES `menuCategory`(`mCa
 -- end create table --
 
 -- add data --
-INSERT INTO `student` (`stuId`, `password`, `name`, `balance`, `email`, `status`) VALUES
-('140476338', '140476338', 'fung', '99999', 'a@a.com', 'approve'),
-('092141446', '092141446', 'tom', '99999', 'a@a.com', 'processing'),
-('140377481', 'tom', 'tom', '550.00', 'tom@gmail.com', 'approve'),
-('140377482', 'GF', 'GF', '100.00', 'gf@gmail.com', 'approve'),
-('140377483', 'Jason', 'Jason', '0.00', 'Jason@gmail.com', 'processing'),
-('140377489', 'tommy', 'wong pui ho', '50.00', 'wongpuiho@gmail.com', 'approve')
+INSERT INTO `student` (`stuId`, `password`, `name`, `balance`, `email`, `status`, `verifyKey`) VALUES
+('140476338', '140476338', 'fung', '99999', 'a@a.com', 'approve', UUID()),
+('092141446', '092141446', 'tom', '99999', 'a@a.com', 'processing', UUID()),
+('140377481', 'tom', 'tom', '550.00', 'tom@gmail.com', 'approve', UUID()),
+('140377482', 'GF', 'GF', '100.00', 'gf@gmail.com', 'approve', UUID()),
+('140377483', 'Jason', 'Jason', '0.00', 'Jason@gmail.com', 'processing', UUID()),
+('140377489', 'tommy', 'wong pui ho', '50.00', 'wongpuiho@gmail.com', 'approve', UUID())
 ;
 INSERT INTO `staff` (`username`, `password`, `position`, `name`) VALUES
 ('admin', 'admin', 'manager', 'admin'),
