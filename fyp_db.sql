@@ -33,7 +33,7 @@ CREATE TABLE `student`(
 CREATE TABLE `stuHistory`(
 	`datetime` datetime NOT NULL,
 	`stuId` varchar(10) NOT NULL,
-	`action` varchar(10) NOT NULL,
+	`action` varchar(25) NOT NULL,
 	`balance` integer NOT NULL
 ) CHARACTER SET = utf8;
 CREATE TABLE `orders`(
@@ -119,8 +119,8 @@ ADD CONSTRAINT `mCate_fk1` FOREIGN KEY(`mCateId`) REFERENCES `menuCategory`(`mCa
 
 -- add data --
 INSERT INTO `student` (`stuId`, `password`, `name`, `balance`, `email`, `status`, `verifyKey`) VALUES
-('140476338', '140476338', 'fung', '99999', 'a@a.com', 'approve', UUID()),
-('092141446', '092141446', 'tom', '99999', 'a@a.com', 'processing', UUID()),
+('140476338', '140476338', 'fung', '5000', 'a@a.com', 'approve', UUID()),
+('092141446', '092141446', 'tom', '5000', 'a@a.com', 'processing', UUID()),
 ('140377481', 'tom', 'tom', '550.00', 'tom@gmail.com', 'approve', UUID()),
 ('140377482', 'GF', 'GF', '100.00', 'gf@gmail.com', 'approve', UUID()),
 ('140377483', 'Jason', 'Jason', '0.00', 'Jason@gmail.com', 'processing', UUID()),
@@ -231,4 +231,6 @@ UPDATE `food` SET `img` = 'image/F00000009.jpg' WHERE `foodId` = 'F00000009';
 -- (CURDATE(), 'O00000001', 'F00000005', (SELECT price FROM food WHERE foodID='F00000005'),(SELECT sprice FROM food WHERE foodID='F00000005'));
 -- ----
 
-SELECT * FROM orders O, orderfood OF, food F, foodtype FT, menu M WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.menuId=M.menuId AND O.orderId='O00000001' AND O.orderDate=CURDATE();
+--SELECT * FROM orders O, orderfood OF, food F, foodtype FT, menu M WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.menuId=M.menuId AND O.orderId='O00000001' AND O.orderDate=CURDATE();
+
+--INSERT INTO stuhistory VALUES(NOW(), '140476338', 'add value',5);
