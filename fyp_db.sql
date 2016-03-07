@@ -40,22 +40,23 @@ CREATE TABLE `orders`(
 	`orderDate` date NOT NULL,
 	`orderId` varchar(10) NOT NULL,
 	`stuId` varchar(10) NOT NULL,
-	`oTakeTime` time NOT NULL,
-	`takeTime` time NULL,
+	`oTakeTime` time NOT NULL, --落的take time
+	`takeTime` time NULL, --拎的take time
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
-	`totalPrice` numeric(5,1) NOT NULL,
-	`menuId` varchar(10) NULL,
+	`totalPrice` numeric(5,1) NOT NULL, 
+	`menuId` varchar(10) NULL, -- if null 正價
+	`printTime` time NULL,
 	PRIMARY KEY (`orderDate`,`orderId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `food`(
 	`foodId` varchar(10) NOT NULL,
 	`name` varchar(70) NOT NULL,
 	`shortName` varchar(50) NOT NULL,
-	`price` numeric(5,1) NOT NULL,
-	`sPrice` numeric(5,1) NOT NULL,
+	`price` numeric(5,1) NOT NULL, --正價
+	`sPrice` numeric(5,1) NOT NULL, --跟餐要+的價
 	`img` varchar(50) NULL,
-	`qty` integer NOT NULL,
-	`dQty` integer NOT NULL,
+	`qty` integer NOT NULL, 
+	`dQty` integer NOT NULL, --for reset
 	`fTypeId`  varchar(10) NOT NULL,
 	`isShow` varchar(1) NOT NULL DEFAULT 'Y',
 	PRIMARY KEY(`foodId`)
