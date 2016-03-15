@@ -139,26 +139,26 @@ INSERT INTO `foodType`(`fTypeId`, `name`) VALUES
 ;
 INSERT INTO `food` (`foodId`, `name`, `shortName`, `price`, `sPrice`, `qty`, `dQty`, `fTypeId`) VALUES
 ('F00000001', '香濃咖喱牛腩飯(Fragrant curry beef brisket rice)', '咖喱牛腩飯', 30, 0, 100, 100, 'FT00000001'),
-('F00000002', '香濃咖喱雞飯(Fragrant curry chicken)', '咖喱雞飯', 30, 0, 100, 100, 'FT00000001'),
-('F00000003', '即磨咖啡(ground coffee)', '啡', 12, 0, 100, 100, 'FT00000002'),
+('F00000002', '香濃咖喱雞飯(Fragrant curry chicken rice)', '咖喱雞飯', 30, 0, 100, 100, 'FT00000001'),
+('F00000003', '即磨咖啡(Ground coffee)', '啡', 12, 0, 100, 100, 'FT00000002'),
 ('F00000004', '凍檸茶(Ice lemon tea)', 'ILT', 15, 3, 100, 100, 'FT00000002'),
 ('F00000005', '紅豆冰(Red bean ice)', '紅豆冰', 18, 8, 100, 100, 'FT00000002'),
 ('F00000006', '叉燒(Barbecue pork)', '叉', 30, 0, 100, 100, 'FT00000004'),
-('F00000007', '燒鴨(Roast duck)', '鴨', 30, 0, 100, 100, 'FT00000004'),
-('F00000008', '燒肉(Roasted pork)', '燒肉', 30, 0, 100, 100, 'FT00000004'),
-('F00000009', '切雞(Cut chicken)', '雞', 30, 0, 100, 100, 'FT00000004')
+('F00000007', '燒鴨(BBQ duck)', '鴨', 30, 0, 100, 100, 'FT00000004'),
+('F00000008', '燒肉(BBQ pork)', '燒肉', 30, 0, 100, 100, 'FT00000004'),
+('F00000009', '切雞(Poached chicken)', '雞', 30, 0, 100, 100, 'FT00000004')
 ;
 INSERT INTO `menuCategory`(`mCateId`, `name`) VALUES
 ('MC00000001', '正價(Regular price)'),
 ('MC00000002', '飯類套餐(Rice set of Category)'),
-('MC00000003', '燒味(siu mei)')
+('MC00000003', '燒味(Siu Mei)')
 ;
 INSERT INTO `Menu` (`menuId`, `name`, `shortName`, `price`, `mCateId`) VALUES
 ('M00000001', '飲品(Drink Category)', '飲', null, 'MC00000001'),
 ('M00000002', '飯類(Rice Category)', '反', null, 'MC00000001'),
 ('M00000003', '套餐(Set rice)', '套餐', 30, 'MC00000002'),
-('M00000004', '雙餸燒味飯(siu mei rice with two choices of sides)', '雙燒味飯', 25, 'MC00000003'),
-('M00000005', '雙餸燒味飯套餐(Set of siu mei rice with two choices of sides)', '雙燒味飯(餐)', 30, 'MC00000003')
+('M00000004', '雙餸燒味飯(Siu Mei Rice with two choices of sides)', '雙燒味飯', 25, 'MC00000003'),
+('M00000005', '雙餸燒味飯套餐(Set of Siu Mei Rice with two choices of sides)', '雙燒味飯(餐)', 30, 'MC00000003')
 ;
 INSERT INTO `menuFood` (`menuId`, `fTypeId`, `many`) VALUES
 ('M00000001', 'FT00000002', 1),
