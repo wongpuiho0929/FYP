@@ -76,3 +76,5 @@ C:\Users\wongp\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login
 C:\Users\wongp\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.addFood.resources
 C:\Users\wongp\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.GenXlsx.resources
 C:\Users\wongp\Documents\Visual Studio 2010\Projects\FYP\FYP\obj\x86\Debug\Login.viewOrderDetail.resources
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.exe
+C:\Users\wongp\Desktop\FYP\FYP\obj\x86\Debug\FYP.pdb

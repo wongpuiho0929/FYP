@@ -24,3 +24,6 @@ FYP/Properties/Resources.Designer.cs
 FYP/Properties/Resources.resx
 *.dll
 *.cache
+FYP/obj/x86/Debug/FYP.csproj.FileListAbsolute.txt
+FYP.suo
+FYP/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
