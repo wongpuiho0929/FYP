@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Login
 {
@@ -22,14 +23,33 @@ namespace Login
             InitializeComponent();
             this.login = login;
             this.db = login.database;
+            this.KeyPreview = true;
             AddValue addValue = new AddValue(this);
             MaintainMenu mMenu = new MaintainMenu(this);
+            MaintainMenu_v2 mMenu_v2 = new MaintainMenu_v2(this);
             MaintainUser mUser = new MaintainUser(this);
             ViewOrder viewOrder = new ViewOrder(this);
             kitchenView kcv = new kitchenView(login);
             Report report = new Report(this);
-            Form[] temp = { addValue, mMenu, mUser, kcv, report};
+            Form[] temp = { addValue, mMenu_v2, mUser, kcv, report };
             frm = temp;
+            
+            string subPath = "Menu"; // your code goes here
+            System.IO.Directory.CreateDirectory(subPath);
+            string menuday = "1Monday";
+            System.IO.Directory.CreateDirectory(subPath+"\\"+menuday);
+             menuday = "2Tuesday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
+             menuday = "3Wednesday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
+             menuday = "4Thursday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
+             menuday = "5Friday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
+             menuday = "6Saturday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
+             menuday = "7Sunday";
+            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -76,7 +96,7 @@ namespace Login
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            DataTable db_orders = db.getDb("orders");
+            DataTable db_orders = db.getDb("orders where status not in('finish')");
 
             for (int i = numOfOrder; i < db_orders.Rows.Count; i++)
             {   
@@ -105,7 +125,7 @@ namespace Login
                 listBox1.Items.Insert(0,s);
                 numOfOrder++;
             }
-            DataTable dt_TakeTime = db.query("Select oTaketime from orders group by oTaketime");
+            DataTable dt_TakeTime = db.query("Select oTaketime from orders where status not in ('finish') group by oTaketime");
             int numberOfTime = dt_TakeTime.Rows.Count;
             if (combo_time.Items.Count != numberOfTime)
             {
@@ -208,8 +228,14 @@ namespace Login
         private void combo_time_SelectedIndexChanged(object sender, EventArgs e)
         {
             //DataTable dt_order = db.query("SELECT orders.orderid,orders.stuid,orderfood.foodid,food.name from food,orders,orderfood where orders.orderid = orderfood.orderid and orderfood.foodid = food.foodid and orders.oTakeTime='" + combo_time.SelectedItem.ToString()+"'");
-            DataTable dt_order = db.query("SELECT orderid,stuid,status from orders where oTakeTime='" + combo_time.SelectedItem.ToString()+"'");
-            dataGridView1.DataSource = dt_order;
+            try
+            {
+                DataTable dt_order = db.query("SELECT orderid,stuid,status from orders where oTakeTime='" + combo_time.SelectedItem.ToString() + "'");
+                dataGridView1.DataSource = dt_order;
+            }catch(Exception ex){
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void btn_take_Click(object sender, EventArgs e)
@@ -250,11 +276,50 @@ namespace Login
             combo_time_SelectedIndexChanged(sender, e);
         }
 
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+            if (e.KeyCode == Keys.F5) {
+                listBox1.Items.Clear();
+                numOfOrder = 0;
+                DataTable db_orders = db.getDb("orders where status not in('finish')");
 
+                for (int i = numOfOrder; i < db_orders.Rows.Count; i++)
+                {
+                    String s = db_orders.Rows[i]["stuid"].ToString();
+                    String oid = db_orders.Rows[i]["orderId"].ToString();
+                    s += "  " + oid;
+                    s += "  at  " + db_orders.Rows[i]["oTakeTime"].ToString();
+                    s += ": order ";
 
-        
+                    DataTable db_orderFood = db.getDb("orderfood where orderid = '" + oid + "'");
+                    if (db_orderFood.Rows.Count > 1)
+                    {
+                        for (int k = 0; k < db_orderFood.Rows.Count; k++)
+                        {
+                            String fid = db_orderFood.Rows[k]["foodId"].ToString();
+                            DataTable db_food = db.getDb("food where foodid='" + fid + "'");
+                            s += "  " + db_food.Rows[0]["shortname"];
+                        }
+                    }
+                    else
+                    {
+                        String fid = db_orderFood.Rows[0]["foodId"].ToString();
+                        DataTable db_food = db.getDb("food where foodid='" + fid + "'");
+                        s += "  " + db_food.Rows[0]["shortname"];
+                    }
 
-       
+                    listBox1.Items.Insert(0, s);
+                    numOfOrder++;
+                }
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
     }
 }

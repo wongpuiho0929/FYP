@@ -29,96 +29,100 @@
         private void InitializeComponent()
         {
             this.gb1 = new System.Windows.Forms.GroupBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btn_del2 = new System.Windows.Forms.Button();
-            this.btn_del = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
+            this.gb_OrderStatus = new System.Windows.Forms.GroupBox();
+            this.gbFunction = new System.Windows.Forms.GroupBox();
+            this.gb_foobType = new System.Windows.Forms.GroupBox();
+            this.gb_Information = new System.Windows.Forms.GroupBox();
+            this.lbl_tov = new System.Windows.Forms.Label();
             this.FLP1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gb1.SuspendLayout();
+            this.gb_Information.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb1
             // 
-            this.gb1.Controls.Add(this.txtId);
-            this.gb1.Controls.Add(this.btn_del2);
-            this.gb1.Controls.Add(this.btn_del);
-            this.gb1.Controls.Add(this.btn_add);
-            this.gb1.Location = new System.Drawing.Point(1608, 15);
-            this.gb1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb1.Controls.Add(this.gb_OrderStatus);
+            this.gb1.Controls.Add(this.gbFunction);
+            this.gb1.Controls.Add(this.gb_foobType);
+            this.gb1.Controls.Add(this.gb_Information);
+            this.gb1.Location = new System.Drawing.Point(1206, 13);
             this.gb1.Name = "gb1";
-            this.gb1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gb1.Size = new System.Drawing.Size(216, 564);
+            this.gb1.Size = new System.Drawing.Size(170, 660);
             this.gb1.TabIndex = 1;
             this.gb1.TabStop = false;
-            this.gb1.Text = "Filter";
+            this.gb1.Text = "filter";
             // 
-            // txtId
+            // gb_OrderStatus
             // 
-            this.txtId.Location = new System.Drawing.Point(37, 139);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(132, 25);
-            this.txtId.TabIndex = 3;
-            this.txtId.Visible = false;
+            this.gb_OrderStatus.Location = new System.Drawing.Point(7, 528);
+            this.gb_OrderStatus.Name = "gb_OrderStatus";
+            this.gb_OrderStatus.Size = new System.Drawing.Size(200, 100);
+            this.gb_OrderStatus.TabIndex = 5;
+            this.gb_OrderStatus.TabStop = false;
+            this.gb_OrderStatus.Text = "Order Status";
             // 
-            // btn_del2
+            // gbFunction
             // 
-            this.btn_del2.Location = new System.Drawing.Point(37, 101);
-            this.btn_del2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_del2.Name = "btn_del2";
-            this.btn_del2.Size = new System.Drawing.Size(100, 29);
-            this.btn_del2.TabIndex = 2;
-            this.btn_del2.Text = "del2";
-            this.btn_del2.UseVisualStyleBackColor = true;
-            this.btn_del2.Visible = false;
-            this.btn_del2.Click += new System.EventHandler(this.btn_del2_Click);
+            this.gbFunction.Location = new System.Drawing.Point(7, 140);
+            this.gbFunction.Name = "gbFunction";
+            this.gbFunction.Size = new System.Drawing.Size(138, 242);
+            this.gbFunction.TabIndex = 1;
+            this.gbFunction.TabStop = false;
+            this.gbFunction.Text = "Take Time";
             // 
-            // btn_del
+            // gb_foobType
             // 
-            this.btn_del.Location = new System.Drawing.Point(37, 65);
-            this.btn_del.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(100, 29);
-            this.btn_del.TabIndex = 1;
-            this.btn_del.Text = "del";
-            this.btn_del.UseVisualStyleBackColor = true;
-            this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            this.gb_foobType.Location = new System.Drawing.Point(17, 388);
+            this.gb_foobType.Name = "gb_foobType";
+            this.gb_foobType.Size = new System.Drawing.Size(137, 145);
+            this.gb_foobType.TabIndex = 4;
+            this.gb_foobType.TabStop = false;
+            this.gb_foobType.Text = "Food Type";
             // 
-            // btn_add
+            // gb_Information
             // 
-            this.btn_add.Location = new System.Drawing.Point(37, 28);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(100, 29);
-            this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Update";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.gb_Information.Controls.Add(this.lbl_tov);
+            this.gb_Information.Location = new System.Drawing.Point(7, 19);
+            this.gb_Information.Name = "gb_Information";
+            this.gb_Information.Size = new System.Drawing.Size(137, 104);
+            this.gb_Information.TabIndex = 3;
+            this.gb_Information.TabStop = false;
+            this.gb_Information.Text = "Information";
+            
+            // 
+            // lbl_tov
+            // 
+            this.lbl_tov.AutoSize = true;
+            this.lbl_tov.Location = new System.Drawing.Point(7, 20);
+            this.lbl_tov.Name = "lbl_tov";
+            this.lbl_tov.Size = new System.Drawing.Size(93, 13);
+            this.lbl_tov.TabIndex = 0;
+            this.lbl_tov.Text = "Total Order Value:";
             // 
             // FLP1
             // 
+            this.FLP1.AutoScroll = true;
             this.FLP1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.FLP1.Location = new System.Drawing.Point(16, 15);
-            this.FLP1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FLP1.Location = new System.Drawing.Point(12, 13);
             this.FLP1.Name = "FLP1";
-            this.FLP1.Size = new System.Drawing.Size(980, 564);
+            this.FLP1.Size = new System.Drawing.Size(735, 489);
             this.FLP1.TabIndex = 2;
             // 
             // kitchenView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1860, 772);
+            this.ClientSize = new System.Drawing.Size(1519, 796);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.FLP1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "kitchenView";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.kitchenView_Load);
             this.gb1.ResumeLayout(false);
-            this.gb1.PerformLayout();
+            this.gb_Information.ResumeLayout(false);
+            this.gb_Information.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -127,9 +131,10 @@
 
         private System.Windows.Forms.GroupBox gb1;
         private System.Windows.Forms.FlowLayoutPanel FLP1;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_del;
-        private System.Windows.Forms.Button btn_del2;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.GroupBox gb_Information;
+        private System.Windows.Forms.Label lbl_tov;
+        private System.Windows.Forms.GroupBox gb_foobType;
+        private System.Windows.Forms.GroupBox gb_OrderStatus;
+        private System.Windows.Forms.GroupBox gbFunction;
     }
 }

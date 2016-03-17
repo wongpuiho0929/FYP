@@ -5,29 +5,41 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Login
 {
   
     public  class Database{
         private MySqlConnection cnn;
-        private  static String server = "127.0.0.1";
-        private  static String database = "fyp_db";
-        private  static String uid = "root";
-        private  static String password = "tommy985";
+        private static String[] text = new String[4];
         //connetionString = "Server=" + server + ";Database=" + database + ";";
 
         public void changeConnection(String s,String u,String p) {
-            server = s;
-            uid = u;
-            password = p;
+            string[] lines = { "server = "+s, "database = fyp_db", "uid = "+u,"password = "+p };
+            System.IO.File.WriteAllLines(@"1.txt", lines);
+
         }
            public void Connection()
+        {
+            try
             {
-                String connetionString = "Server=" + server + ";Database=" + database + ";UiD=" + uid + ";Pwd=" + password + "; Charset=utf8";
+
+                string[] lines = System.IO.File.ReadAllLines(@"1.txt");
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    String temp = lines[i].Substring(lines[i].IndexOf("=") + 1);
+                    text[i] = temp;
+                }
+                String connetionString = "Server=" + text[0] + ";Database=" + text[1] + ";UiD=" + text[2] + ";Pwd=" + text[3] + "; Charset=utf8";
                 cnn = new MySqlConnection(connetionString);
-                
             }
+            catch (System.IO.FileNotFoundException) {
+                using (StreamWriter sw = File.CreateText(@"1.txt")) {
+                    sw.WriteLine("Hello");
+                }
+            }
+        }
 
            public DataTable getDb()
            {
@@ -43,7 +55,7 @@ namespace Login
            }
            public DataTable getDb(String dbName)
            {
-               
+
                    MySqlCommand command = cnn.CreateCommand();
                    cnn.Open();
                    String cmdText = "SELECT * FROM " + dbName;
@@ -53,7 +65,6 @@ namespace Login
                    da.Fill(db);
                    cnn.Close();
                    return db;
-
            }
 
            public DataTable getDb(String dbName, String columnName, String columunResult)
@@ -122,7 +133,7 @@ namespace Login
                {
                    da.Fill(db);
                }
-               catch (Exception ex) {
+               catch (Exception ) {
                    MessageBox.Show("You are already INSERT this record!");
                }
                cnn.Close();
@@ -146,7 +157,7 @@ namespace Login
                {
                    da.Fill(db);
                }
-               catch (Exception ex)
+               catch (Exception)
                {
                    MessageBox.Show("SELECTED 0 record!");
                }
