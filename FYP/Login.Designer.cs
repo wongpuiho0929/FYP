@@ -82,7 +82,7 @@
             this.btn_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(125, 63);
-            this.btn_login.TabIndex = 4;
+            this.btn_login.TabIndex = 5;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -99,7 +99,7 @@
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(176, 63);
-            this.btn_Cancel.TabIndex = 5;
+            this.btn_Cancel.TabIndex = 4;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);

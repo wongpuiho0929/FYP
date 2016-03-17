@@ -12,14 +12,14 @@ namespace Login
     public partial class MaintainCategory : Form
     {
 
-        Main main;
+        MaintainMenu menu;
         Database db;
 
-        public MaintainCategory(Main main)
+        public MaintainCategory(MaintainMenu menu)
         {
             InitializeComponent();
-            this.main = main;
-            db = main.db;
+            this.menu = menu;
+            db = menu.db;
         }
 
         private void MaintainCategory_Load(object sender, EventArgs e)

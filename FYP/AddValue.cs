@@ -21,7 +21,6 @@ namespace Login
         {
             InitializeComponent();
             this.main = main;
-            this.KeyPreview = true;
             lab_total.Text = "Total : " + total;
             db = main.db;
         }
@@ -33,6 +32,7 @@ namespace Login
             txt_studID.Text = "";
             lab_Info.Text = "Info";
             txt_studID.Enabled = true;
+            dt_Student = db.getDb("Student");
             this.ActiveControl = txt_studID;
             ListBox_History.Items.Clear();
         }
@@ -41,12 +41,6 @@ namespace Login
 
         private void txt_studID_TextChanged(object sender, EventArgs e)
         {
-            showHistory();
-        }
-
-        private void showHistory() {
-            dt_Student = db.getDb("Student");
-            ListBox_History.Items.Clear();
             for (int i = 0; i < dt_Student.Rows.Count; i++)
             {
                 if (txt_studID.Text.Equals(dt_Student.Rows[i]["stuId"]))
@@ -55,13 +49,12 @@ namespace Login
                     lab_Info.Text += "\nStudent Balance : \n" + dt_Student.Rows[i]["balance"];
                     txt_studID.Enabled = false;
                     balance = Convert.ToDouble(dt_Student.Rows[i]["balance"].ToString());
-                    DataTable db_History = db.getDb("stuhistory where stuid ='" + txt_studID.Text + "'");
-                    for (int k = 0; k < db_History.Rows.Count; k++)
-                    {
-                        String s = db_History.Rows[k][0].ToString() + "\t\t" + db_History.Rows[k][2].ToString() + "\t\t" + db_History.Rows[k][3].ToString();
+                    DataTable db_History = db.getDb("stuhistory where stuid ='"+txt_studID.Text+"'");
+                    for (int k = 0; k < db_History.Rows.Count; k++) {
+                        String s = db_History.Rows[k][0].ToString() +"\t\t"+ db_History.Rows[k][2].ToString() +"\t\t" +db_History.Rows[k][3].ToString();
                         ListBox_History.Items.Add(s);
-                    }
-                }
+                    }  
+               }
             } 
         }
         //-----------------------Add function---------------------------------//
@@ -93,10 +86,10 @@ namespace Login
             if (total > 998)
             {
                 MessageBox.Show("Balance cannot larger than 998");
-                AddValue_Load(sender, e);
+                AddValue_Load(sender,e);
             }else if(txt_studID.Text==""){
                 MessageBox.Show("Please scan one more time.");
-               AddValue_Load( sender,  e);
+                AddValue_Load(sender, e);
             }
             else
             {
@@ -110,19 +103,8 @@ namespace Login
                 balance = Convert.ToDouble(changeData.Rows[0]["balance"].ToString());
                 s = "INSERT INTO stuHistory(datetime, stuId, action, balance) VALUES( NOW(),'" + txt_studID.Text + "', 'Add Value'," + temp + ");";
                 db.queny(s);
-                showHistory();
-               
             }
         }
-
-        private void AddValue_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-            if (e.KeyCode==Keys.Escape) {
-                AddValue_Load(sender, e);
-            }
-        }
-
         //----------------------- End Add function---------------------------------//
     }
 }

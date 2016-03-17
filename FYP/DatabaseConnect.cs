@@ -32,7 +32,7 @@ namespace Login
                 login.btn_login.Enabled = true;
                 this.Close();
             }
-            catch (Exception ) {
+            catch (Exception ex) {
                 MessageBox.Show("try again.");
             }
             

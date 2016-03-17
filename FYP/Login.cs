@@ -27,6 +27,8 @@ namespace Login
             t.Abort();
             database = new Database();
             database.Connection();
+            
+            
         }
         public void SplashScreen() {
             Application.Run(new SplashScreen());
@@ -64,7 +66,7 @@ namespace Login
             {
                 database.getDb("staff");
             }
-            catch (Exception )
+            catch (Exception ex)
             {
                 MessageBox.Show("Cannot connect to server.");
                 btn_login.Enabled = false;
