@@ -183,6 +183,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddValue";
             this.Load += new System.EventHandler(this.AddValue_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddValue_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -11,13 +11,13 @@ namespace Login
 {
     public partial class MaintainMenuFood : Form
     {
-        private MaintainMenu menu;
+        private Main menu;
         private Database db;
         private String txt_MenuID;
         private List<Label> labels = new List<Label>();
         private List<NumericUpDown> nums = new List<NumericUpDown>();
 
-        public MaintainMenuFood(MaintainMenu menu, String txt_MenuID)
+        public MaintainMenuFood(Main menu, String txt_MenuID)
         {
             InitializeComponent();
             this.menu = menu;
@@ -94,7 +94,7 @@ namespace Login
                 MessageBox.Show("Successful");
                 this.Close();
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 MessageBox.Show("Please check your data");
             }
             

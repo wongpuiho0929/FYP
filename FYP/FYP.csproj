@@ -49,6 +49,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\MicroOffice\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.6.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MySQL Connector Net 6.6.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
@@ -66,11 +71,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addFood.Designer.cs">
+      <DependentUpon>addFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addMenuType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addMenuType.Designer.cs">
+      <DependentUpon>addMenuType.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddValue.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddValue.Designer.cs">
       <DependentUpon>AddValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeMenu.Designer.cs">
+      <DependentUpon>ChangeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseConnect.cs">
@@ -84,6 +110,12 @@
     </Compile>
     <Compile Include="FoodType.Designer.cs">
       <DependentUpon>FoodType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenXlsx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenXlsx.Designer.cs">
+      <DependentUpon>GenXlsx.cs</DependentUpon>
     </Compile>
     <Compile Include="kitchenView.cs">
       <SubType>Form</SubType>
@@ -121,11 +153,23 @@
     <Compile Include="MaintainMenuFood.Designer.cs">
       <DependentUpon>MaintainMenuFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintainMenu_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainMenu_v2.Designer.cs">
+      <DependentUpon>MaintainMenu_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaintainUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaintainUser.Designer.cs">
       <DependentUpon>MaintainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenChangeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenChangeMenu.Designer.cs">
+      <DependentUpon>OpenChangeMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="orderView.cs" />
     <Compile Include="Program.cs" />
@@ -148,14 +192,32 @@
     <Compile Include="ViewOrder.Designer.cs">
       <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewOrderDetail.Designer.cs">
+      <DependentUpon>viewOrderDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addFood.resx">
+      <DependentUpon>addFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addMenuType.resx">
+      <DependentUpon>addMenuType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddValue.resx">
       <DependentUpon>AddValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeMenu.resx">
+      <DependentUpon>ChangeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseConnect.resx">
       <DependentUpon>DatabaseConnect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FoodType.resx">
       <DependentUpon>FoodType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenXlsx.resx">
+      <DependentUpon>GenXlsx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kitchenView.resx">
       <DependentUpon>kitchenView.cs</DependentUpon>
@@ -175,8 +237,14 @@
     <EmbeddedResource Include="MaintainMenuFood.resx">
       <DependentUpon>MaintainMenuFood.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintainMenu_v2.resx">
+      <DependentUpon>MaintainMenu_v2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaintainUser.resx">
       <DependentUpon>MaintainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenChangeMenu.resx">
+      <DependentUpon>OpenChangeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewOrder.resx">
       <DependentUpon>ViewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewOrderDetail.resx">
+      <DependentUpon>viewOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,6 +302,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
