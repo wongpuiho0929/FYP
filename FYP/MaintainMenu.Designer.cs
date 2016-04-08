@@ -91,7 +91,7 @@
             this.tab_food.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab_food.Name = "tab_food";
             this.tab_food.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab_food.Size = new System.Drawing.Size(1175, 721);
+            this.tab_food.Size = new System.Drawing.Size(1175, 779);
             this.tab_food.TabIndex = 0;
             this.tab_food.Text = "Food";
             this.tab_food.UseVisualStyleBackColor = true;
@@ -142,8 +142,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.lab_FID);
             this.splitContainer1.Panel2.Controls.Add(this.DGW_show);
             this.splitContainer1.Panel2.Controls.Add(this.lab_FoodName);
-            this.splitContainer1.Size = new System.Drawing.Size(1169, 717);
-            this.splitContainer1.SplitterDistance = 148;
+            this.splitContainer1.Size = new System.Drawing.Size(1169, 775);
+            this.splitContainer1.SplitterDistance = 149;
             this.splitContainer1.TabIndex = 2;
             // 
             // groupBox2
@@ -151,7 +151,7 @@
             this.groupBox2.Controls.Add(this.chk_N);
             this.groupBox2.Controls.Add(this.chk_Y);
             this.groupBox2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(11, 393);
+            this.groupBox2.Location = new System.Drawing.Point(11, 394);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -214,7 +214,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 72);
+            this.textBox1.Location = new System.Drawing.Point(11, 71);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(231, 30);
@@ -276,7 +276,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(27, 567);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 33);
+            this.button1.Size = new System.Drawing.Size(128, 34);
             this.button1.TabIndex = 28;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@
             this.btn_add.Location = new System.Drawing.Point(820, 490);
             this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(141, 78);
+            this.btn_add.Size = new System.Drawing.Size(141, 79);
             this.btn_add.TabIndex = 23;
             this.btn_add.Text = "ADD";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.btn_maintain.Location = new System.Drawing.Point(820, 601);
             this.btn_maintain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_maintain.Name = "btn_maintain";
-            this.btn_maintain.Size = new System.Drawing.Size(141, 78);
+            this.btn_maintain.Size = new System.Drawing.Size(141, 79);
             this.btn_maintain.TabIndex = 24;
             this.btn_maintain.Text = "Maintain";
             this.btn_maintain.UseVisualStyleBackColor = true;
@@ -345,7 +345,7 @@
             // 
             this.combo_foodType.Enabled = false;
             this.combo_foodType.FormattingEnabled = true;
-            this.combo_foodType.Location = new System.Drawing.Point(27, 695);
+            this.combo_foodType.Location = new System.Drawing.Point(26, 695);
             this.combo_foodType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combo_foodType.Name = "combo_foodType";
             this.combo_foodType.Size = new System.Drawing.Size(301, 33);
@@ -358,7 +358,7 @@
             this.combo_isShow.Items.AddRange(new object[] {
             "Y",
             "N"});
-            this.combo_isShow.Location = new System.Drawing.Point(395, 695);
+            this.combo_isShow.Location = new System.Drawing.Point(394, 695);
             this.combo_isShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combo_isShow.Name = "combo_isShow";
             this.combo_isShow.Size = new System.Drawing.Size(121, 33);
@@ -376,7 +376,7 @@
             // num_qty
             // 
             this.num_qty.Enabled = false;
-            this.num_qty.Location = new System.Drawing.Point(395, 627);
+            this.num_qty.Location = new System.Drawing.Point(394, 627);
             this.num_qty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.num_qty.Name = "num_qty";
             this.num_qty.Size = new System.Drawing.Size(120, 30);
@@ -406,7 +406,7 @@
             0,
             0,
             65536});
-            this.num_price.Location = new System.Drawing.Point(27, 627);
+            this.num_price.Location = new System.Drawing.Point(26, 627);
             this.num_price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.num_price.Name = "num_price";
             this.num_price.Size = new System.Drawing.Size(120, 30);
@@ -415,7 +415,7 @@
             // lab_isShow
             // 
             this.lab_isShow.AutoSize = true;
-            this.lab_isShow.Location = new System.Drawing.Point(389, 672);
+            this.lab_isShow.Location = new System.Drawing.Point(390, 671);
             this.lab_isShow.Name = "lab_isShow";
             this.lab_isShow.Size = new System.Drawing.Size(82, 25);
             this.lab_isShow.TabIndex = 13;
@@ -424,7 +424,7 @@
             // lab_type
             // 
             this.lab_type.AutoSize = true;
-            this.lab_type.Location = new System.Drawing.Point(21, 672);
+            this.lab_type.Location = new System.Drawing.Point(22, 671);
             this.lab_type.Name = "lab_type";
             this.lab_type.Size = new System.Drawing.Size(113, 25);
             this.lab_type.TabIndex = 11;
@@ -433,7 +433,7 @@
             // lab_dQty
             // 
             this.lab_dQty.AutoSize = true;
-            this.lab_dQty.Location = new System.Drawing.Point(583, 603);
+            this.lab_dQty.Location = new System.Drawing.Point(583, 604);
             this.lab_dQty.Name = "lab_dQty";
             this.lab_dQty.Size = new System.Drawing.Size(110, 25);
             this.lab_dQty.TabIndex = 10;
@@ -442,7 +442,7 @@
             // lab_qty
             // 
             this.lab_qty.AutoSize = true;
-            this.lab_qty.Location = new System.Drawing.Point(389, 603);
+            this.lab_qty.Location = new System.Drawing.Point(390, 604);
             this.lab_qty.Name = "lab_qty";
             this.lab_qty.Size = new System.Drawing.Size(91, 25);
             this.lab_qty.TabIndex = 9;
@@ -451,7 +451,7 @@
             // lab_SPrice
             // 
             this.lab_SPrice.AutoSize = true;
-            this.lab_SPrice.Location = new System.Drawing.Point(203, 603);
+            this.lab_SPrice.Location = new System.Drawing.Point(203, 604);
             this.lab_SPrice.Name = "lab_SPrice";
             this.lab_SPrice.Size = new System.Drawing.Size(132, 25);
             this.lab_SPrice.TabIndex = 8;
@@ -460,7 +460,7 @@
             // lab_Price
             // 
             this.lab_Price.AutoSize = true;
-            this.lab_Price.Location = new System.Drawing.Point(21, 603);
+            this.lab_Price.Location = new System.Drawing.Point(22, 604);
             this.lab_Price.Name = "lab_Price";
             this.lab_Price.Size = new System.Drawing.Size(62, 25);
             this.lab_Price.TabIndex = 7;
@@ -478,7 +478,7 @@
             // lab_FName
             // 
             this.lab_FName.AutoSize = true;
-            this.lab_FName.Location = new System.Drawing.Point(201, 438);
+            this.lab_FName.Location = new System.Drawing.Point(201, 439);
             this.lab_FName.Name = "lab_FName";
             this.lab_FName.Size = new System.Drawing.Size(120, 25);
             this.lab_FName.TabIndex = 5;
@@ -496,7 +496,7 @@
             // lab_FID
             // 
             this.lab_FID.AutoSize = true;
-            this.lab_FID.Location = new System.Drawing.Point(20, 438);
+            this.lab_FID.Location = new System.Drawing.Point(20, 439);
             this.lab_FID.Name = "lab_FID";
             this.lab_FID.Size = new System.Drawing.Size(87, 25);
             this.lab_FID.TabIndex = 3;
@@ -515,7 +515,7 @@
             this.DGW_show.ReadOnly = true;
             this.DGW_show.RowTemplate.Height = 27;
             this.DGW_show.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGW_show.Size = new System.Drawing.Size(1017, 387);
+            this.DGW_show.Size = new System.Drawing.Size(1016, 386);
             this.DGW_show.TabIndex = 2;
             this.DGW_show.SelectionChanged += new System.EventHandler(this.DGW_show_SelectionChanged);
             // 
@@ -540,7 +540,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1183, 764);
+            this.tabControl1.Size = new System.Drawing.Size(1183, 822);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -549,7 +549,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(1183, 764);
+            this.ClientSize = new System.Drawing.Size(1183, 822);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

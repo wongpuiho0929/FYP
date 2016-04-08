@@ -20,6 +20,8 @@ namespace Login
         private Thread thread;
         private CheckBoxEx[] time;
         private int x = 0;
+        private List<String> timeList = new List<string>();
+        private List<String> typeList = new List<string>();
         public kitchenView(Login login)
         {
             InitializeComponent();
@@ -86,23 +88,6 @@ namespace Login
             ov.setAllDt();
             DataTable AllDt = ov.getAllDt();
             for (int i = 0; i < AllDt.Rows.Count; i++)
-            /*{
-                lb = new ListBox();
-                lb.Name = AllDt.Rows[i]["orderid"].ToString();
-                lb.Font = new System.Drawing.Font("Microsoft JhengHei", 30, System.Drawing.FontStyle.Bold);
-                lb.ForeColor = Color.Black;
-                lb.Height = screenHeight / 3;
-                lb.Width = (screenWidth - 250) / 3;
-                lb.HorizontalScrollbar = true;
-                ov.setAllDt(lb.Name.ToString());
-                DataTable orderDetail = ov.getAllDt();
-                lb.Items.Add("Order ID:" + lb.Name.ToString());
-                for (int j = 0; j < orderDetail.Rows.Count; j++)
-                {
-                    lb.Items.Add(orderDetail.Rows[j]["shortname"]);
-                }
-                lb.Items.Add(AllDt.Rows[i]["otaketime"]);
-                    FLP1.Controls.Add(lb);}*/
             {
                 Label lb = new Label();
                 lb.Height = screenHeight / 3;
@@ -115,18 +100,21 @@ namespace Login
                 DataTable orderDetail = ov.getAllDt();
                 String s = "";
                 s += lb.Name.ToString()+"\r";
+                String[] tag = new String[orderDetail.Rows.Count+1];
                 for (int j = 0; j < orderDetail.Rows.Count; j++)
                 {
                     s+=orderDetail.Rows[j]["shortname"]+"\r";
+                    tag[j] = orderDetail.Rows[j]["ftypeid"].ToString();
                 }
                 s += "Take Time:"+AllDt.Rows[i]["otaketime"];
                 lb.Text = s;
-                lb.Tag = AllDt.Rows[i]["otaketime"].ToString().Substring(0,5);
+                tag[orderDetail.Rows.Count] = AllDt.Rows[i]["otaketime"].ToString().Substring(0, 5);
+                lb.Tag = tag;
                 lb.Click += new EventHandler(orderObject_click);
                 FLP1.Controls.Add(lb);
-                lbl_tov.Text = "Total Order Value:" + orderDetail.Rows.Count.ToString();
+                lbl_tov.Text = "Total Order Value:" + AllDt.Rows.Count.ToString();
             }
-            checkTime();
+            control();
         }
         private void orderObject_click(object sender, EventArgs e)
         {
@@ -152,18 +140,12 @@ namespace Login
                 cb.Font = new System.Drawing.Font("Microsoft JhengHei", 12, System.Drawing.FontStyle.Bold);
                 cb.Name = "cb_foodType_"+dt.Rows[i].ToString();
                 cb.Text = dt.Rows[i]["name"].ToString();
+                cb.Tag = dt.Rows[i]["fTypeId"].ToString();
                 gb_foobType.Controls.Add(cb);
                 cb.CheckedChanged += new EventHandler(CheckBox1_CheckedChanged);
             } 
         }
-        private void CheckBox1_CheckedChanged(Object sender, EventArgs e)
-        {
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked == true)
-            {
-                MessageBox.Show(cb.Text);
-            }
-        }
+        
         private void addTakeTime()
         {
             int hour = 10;
@@ -198,14 +180,117 @@ namespace Login
             }
         }
 
-        private List<String> timeList = new List<string>();
+        
 
         private void CheckBoxTime_CheckedChanged(Object Sender, EventArgs e)
         {
+            control();
+        }
+        private void CheckBox1_CheckedChanged(Object sender, EventArgs e)
+        {
+            control();
+        }
 
-            checkTime();
+        private void control()
+        {
+            typeList = new List<string>();
+            timeList = new List<string>();
+            for (int i = 0; i < time.Length; i++)
+            {
+                if (time[i].Checked == true)
+                {
+                    timeList.Add(time[i].Text);
+                }
+            }
+            foreach (Control c in gb_foobType.Controls)
+            {
+                CheckBoxEx cb = (CheckBoxEx)c;
+                if (cb.Checked == true)
+                {
+                    typeList.Add(cb.Tag.ToString());
+                }
+            }
+           if (timeList.Count + typeList.Count > 1)
+            {
+                checkType();
+                checkTime();
+            }
+           if (typeList.Count > 0 && timeList.Count==0)
+            {
+                checkType();
+            }
+           if (timeList.Count > 0 && typeList.Count == 0)
+            {
+                checkFullTime();
+            }
+           if (timeList.Count == 0 && typeList.Count == 0)
+           {
+               foreach (Control c in FLP1.Controls)
+               {
+                   Label lb = (Label)c;
+                   lb.Show();
+               }
+           }
+        }
+        private void checkType()
+        {
+            
+            typeList = new List<string>();
+            foreach (Control c in gb_foobType.Controls)
+            {
+                CheckBoxEx cb = (CheckBoxEx)c;
+                if (cb.Checked == true)
+                {
+                    typeList.Add(cb.Tag.ToString());
+                }
+            }
+            if (typeList.Count == 0 || typeList.Count == gb_foobType.Controls.Count)
+            {
+                foreach (Control c in FLP1.Controls)
+                {
+                    Label lb = (Label)c;
+                    lb.Show();
+                }
+                return;
+            }
+            foreach (Control c in FLP1.Controls)
+            {
+                Label lb = (Label)c;
+                String[] tag = (String[])lb.Tag;
+                if (tag.Any(typeList.Contains))
+                {
+                    lb.Show();
+                }
+                else
+                {
+                    lb.Hide();
+                }
+                
+            }
+            
         }
         private void checkTime()
+        {
+            timeList = new List<string>();
+            for (int i = 0; i < time.Length; i++)
+            {
+                if (time[i].Checked == true)
+                {
+                    timeList.Add(time[i].Text);
+                }
+            }
+            foreach (Control c in FLP1.Controls)
+            {
+                Label lb = (Label)c;
+                String[] tag = (String[])lb.Tag;
+                if (timeList.Contains(tag[tag.Length - 1])) { }
+                else
+                {
+                    lb.Hide();
+                }
+            }
+        }
+        private void checkFullTime()
         {
             timeList = new List<string>();
             for (int i = 0; i < time.Length; i++)
@@ -224,13 +309,13 @@ namespace Login
                 }
                 return;
             }
-                
+
             foreach (Control c in FLP1.Controls)
             {
                 Label lb = (Label)c;
-                if (timeList.Contains(lb.Tag.ToString()))
+                String[] tag = (String[])lb.Tag;
+                if (timeList.Contains(tag[tag.Length - 1]))
                 {
-                    
                     lb.Show();
                 }
                 else

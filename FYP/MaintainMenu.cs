@@ -277,7 +277,7 @@ namespace Login
 
         private void btn_MenuCategory_Click(object sender, EventArgs e)
         {
-            MaintainCategory MC = new MaintainCategory(main);
+            MaintainCategory MC = new MaintainCategory(this);
             MC.ShowDialog();
         }
 

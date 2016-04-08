@@ -53,7 +53,6 @@
             this.lab_TakeTime = new System.Windows.Forms.Label();
             this.combo_time = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grp_takeOrder.SuspendLayout();
@@ -70,7 +69,7 @@
             this.panel1.Controls.Add(this.btn_Menu);
             this.panel1.Controls.Add(this.btn_AddValue);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 670);
+            this.panel1.Location = new System.Drawing.Point(0, 682);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 118);
@@ -78,19 +77,18 @@
             // 
             // btn_Report
             // 
-            this.btn_Report.Location = new System.Drawing.Point(853, 3);
+            this.btn_Report.Location = new System.Drawing.Point(853, 4);
             this.btn_Report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Report.Name = "btn_Report";
             this.btn_Report.Size = new System.Drawing.Size(205, 111);
             this.btn_Report.TabIndex = 9;
             this.btn_Report.Text = "Report";
             this.btn_Report.UseVisualStyleBackColor = true;
-            this.btn_Report.Visible = false;
             this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // btn_ViewOrder
             // 
-            this.btn_ViewOrder.Location = new System.Drawing.Point(643, 3);
+            this.btn_ViewOrder.Location = new System.Drawing.Point(643, 4);
             this.btn_ViewOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ViewOrder.Name = "btn_ViewOrder";
             this.btn_ViewOrder.Size = new System.Drawing.Size(205, 111);
@@ -101,7 +99,7 @@
             // 
             // btn_Staff
             // 
-            this.btn_Staff.Location = new System.Drawing.Point(432, 3);
+            this.btn_Staff.Location = new System.Drawing.Point(432, 4);
             this.btn_Staff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Staff.Name = "btn_Staff";
             this.btn_Staff.Size = new System.Drawing.Size(205, 111);
@@ -136,7 +134,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FloralWhite;
             this.panel2.CausesValidation = false;
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lab_username);
             this.panel2.Controls.Add(this.lab_status);
             this.panel2.Controls.Add(this.Close);
@@ -145,7 +142,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 48);
+            this.panel2.Size = new System.Drawing.Size(1151, 49);
             this.panel2.TabIndex = 2;
             // 
             // lab_username
@@ -214,17 +211,18 @@
             this.grp_takeOrder.Controls.Add(this.combo_time);
             this.grp_takeOrder.Dock = System.Windows.Forms.DockStyle.Right;
             this.grp_takeOrder.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.grp_takeOrder.Location = new System.Drawing.Point(567, 48);
+            this.grp_takeOrder.Location = new System.Drawing.Point(567, 49);
             this.grp_takeOrder.Name = "grp_takeOrder";
-            this.grp_takeOrder.Size = new System.Drawing.Size(584, 622);
+            this.grp_takeOrder.Size = new System.Drawing.Size(584, 633);
             this.grp_takeOrder.TabIndex = 5;
             this.grp_takeOrder.TabStop = false;
             this.grp_takeOrder.Text = "Take Order";
+      
             // 
             // grp_order
             // 
             this.grp_order.Controls.Add(this.btn_Confirm);
-            this.grp_order.Location = new System.Drawing.Point(13, 563);
+            this.grp_order.Location = new System.Drawing.Point(14, 563);
             this.grp_order.Name = "grp_order";
             this.grp_order.Size = new System.Drawing.Size(263, 257);
             this.grp_order.TabIndex = 7;
@@ -248,22 +246,22 @@
             this.grp_StudentInfo.Controls.Add(this.txt_studid);
             this.grp_StudentInfo.Controls.Add(this.btn_take);
             this.grp_StudentInfo.Controls.Add(this.lab_studentID);
-            this.grp_StudentInfo.Location = new System.Drawing.Point(13, 373);
+            this.grp_StudentInfo.Location = new System.Drawing.Point(14, 373);
             this.grp_StudentInfo.Name = "grp_StudentInfo";
-            this.grp_StudentInfo.Size = new System.Drawing.Size(264, 183);
+            this.grp_StudentInfo.Size = new System.Drawing.Size(264, 184);
             this.grp_StudentInfo.TabIndex = 6;
             this.grp_StudentInfo.TabStop = false;
             // 
             // txt_studid
             // 
-            this.txt_studid.Location = new System.Drawing.Point(5, 77);
+            this.txt_studid.Location = new System.Drawing.Point(6, 77);
             this.txt_studid.Name = "txt_studid";
             this.txt_studid.Size = new System.Drawing.Size(223, 35);
             this.txt_studid.TabIndex = 4;
             // 
             // btn_take
             // 
-            this.btn_take.Location = new System.Drawing.Point(5, 133);
+            this.btn_take.Location = new System.Drawing.Point(6, 133);
             this.btn_take.Name = "btn_take";
             this.btn_take.Size = new System.Drawing.Size(223, 45);
             this.btn_take.TabIndex = 5;
@@ -289,7 +287,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 81);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -321,30 +319,17 @@
             this.listBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 28;
-            this.listBox1.Location = new System.Drawing.Point(0, 48);
+            this.listBox1.Location = new System.Drawing.Point(0, 49);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(357, 622);
+            this.listBox1.Size = new System.Drawing.Size(357, 633);
             this.listBox1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.label1.Location = new System.Drawing.Point(1087, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 28);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "-";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1151, 788);
+            this.ClientSize = new System.Drawing.Size(1151, 800);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.grp_takeOrder);
             this.Controls.Add(this.panel2);
@@ -396,7 +381,6 @@
         private System.Windows.Forms.GroupBox grp_StudentInfo;
         private System.Windows.Forms.GroupBox grp_order;
         private System.Windows.Forms.Button btn_Confirm;
-        private System.Windows.Forms.Label label1;
 
     }
 }

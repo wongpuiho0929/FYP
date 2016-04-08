@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Login
 {
@@ -33,23 +32,6 @@ namespace Login
             Report report = new Report(this);
             Form[] temp = { addValue, mMenu_v2, mUser, kcv, report };
             frm = temp;
-            
-            string subPath = "Menu"; // your code goes here
-            System.IO.Directory.CreateDirectory(subPath);
-            string menuday = "1Monday";
-            System.IO.Directory.CreateDirectory(subPath+"\\"+menuday);
-             menuday = "2Tuesday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
-             menuday = "3Wednesday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
-             menuday = "4Thursday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
-             menuday = "5Friday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
-             menuday = "6Saturday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
-             menuday = "7Sunday";
-            System.IO.Directory.CreateDirectory(subPath + "\\" + menuday);
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -61,10 +43,10 @@ namespace Login
             dataGridView1.Width = y / 2;
             grp_StudentInfo.Width = y / 2;
             grp_order.Width = y / 2;
-            y = y / 4;
+            y = y / 5;
             var x = btn_AddValue.Size.Height;
             grp_order.Height = x*2;
-            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder};
+            Button[] btn = { btn_AddValue, btn_Menu, btn_Staff, btn_ViewOrder,btn_Report};
             for (int i = 0; i < btn.Length; i++) {
                 btn[i].Size = new Size(y, x);
             }
@@ -314,11 +296,6 @@ namespace Login
                 }
 
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
     }

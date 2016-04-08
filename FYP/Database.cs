@@ -55,7 +55,7 @@ namespace Login
            }
            public DataTable getDb(String dbName)
            {
-
+               
                    MySqlCommand command = cnn.CreateCommand();
                    cnn.Open();
                    String cmdText = "SELECT * FROM " + dbName;
@@ -65,6 +65,7 @@ namespace Login
                    da.Fill(db);
                    cnn.Close();
                    return db;
+
            }
 
            public DataTable getDb(String dbName, String columnName, String columunResult)
@@ -109,7 +110,7 @@ namespace Login
            {
                MySqlCommand command = cnn.CreateCommand();
                cnn.Open();
-               String cmdText = "SELECT o.orderId,o.oTakeTime,o.orderDate,f.shortName,ft.name FROM orders O, orderfood OF, food F, foodtype FT WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.orderId='" + oid + "' AND O.orderDate=CURDATE()";
+               String cmdText = "SELECT o.orderId,o.oTakeTime,o.orderDate,f.shortName,ft.name,ft.ftypeid FROM orders O, orderfood OF, food F, foodtype FT WHERE O.orderDate=OF.orderDate AND O.orderId=OF.orderId AND OF.foodId=F.foodId AND F.fTypeId=FT.fTypeId AND O.orderId='" + oid + "' AND O.orderDate=CURDATE()";
                MySqlCommand cmd = new MySqlCommand(cmdText, cnn);
                MySqlDataAdapter da = new MySqlDataAdapter(cmdText, cnn);
                DataTable db = new DataTable();
