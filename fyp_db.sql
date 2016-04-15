@@ -28,6 +28,7 @@ CREATE TABLE `student`(
 	`email` varchar(30) NOT NULL,
 	`status` varchar(10) NOT NULL DEFAULT 'processing',
 	`verifyKey` varchar(20) NOT NULL,
+	`createAt` datetime NOT NULL DEFAULT NOW(),
 	PRIMARY KEY (`stuId`)
 ) CHARACTER SET = utf8;
 CREATE TABLE `stuHistory`(
